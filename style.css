@@ -1,0 +1,81 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #191C22;
+  padding: 5px 15px;
+  border-bottom: 1px solid #2B2F38;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Georgia', serif; /* or a serif Google Font for that formal feel */
+  font-size: 1.4rem;
+  color: #F2EFE9;
+  margin-right: 200px;
+}
+
+.logo-icon {
+  filter: grayscale(100%);
+  width: 70px;
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  margin-right: 925px;
+}
+
+.nav-links a {
+  color: #F2EFE9;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #A8875C; /* bronze accent */
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: #F2EFE9;
+  cursor: pointer;
+  width: 25px;
+  height: 25px
+}
+
+/* Unique CSS per Section */
+
+/* - - - - - About - - - - -*/
+.about {
+    background-image: url('assets/home-bg1.png');
+    background-color: black;
+    color: #A8875C;
+}
+.about-main {
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.about-main .section-header {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #F2EFE9;
+}
+.about-main .tagline {
+    display: flex;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-weight: 10;
+}
+.about-main .description {
+    text-align: left;
+    margin-left: 70px;
+    max-width: 80%;
+    color: #F2EFE9;
+}
