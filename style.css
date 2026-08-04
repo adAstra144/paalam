@@ -1,11 +1,15 @@
+
+/* - - - - - Header - - - - -*/
 .header {
   display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   align-items: center;
   background-color: #191C22;
   padding: 5px 15px;
   border-bottom: 1px solid #2B2F38;
 }
-
 .logo {
   display: flex;
   align-items: center;
@@ -15,67 +19,163 @@
   color: #F2EFE9;
   margin-right: 200px;
 }
-
 .logo-icon {
   filter: grayscale(100%);
   width: 70px;
   height: 50px;
 }
-
 .nav-links {
   display: flex;
   gap: 40px;
   margin-right: 925px;
 }
-
 .nav-links a {
   color: #F2EFE9;
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.2s ease;
 }
-
 .nav-links a:hover {
   color: #A8875C; /* bronze accent */
 }
 
-.menu-btn {
-  background: none;
-  border: none;
-  color: #F2EFE9;
-  cursor: pointer;
-  width: 25px;
-  height: 25px
+
+/* - - - - - Animation - - - - -*/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Starts 20px lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);    /* Moves to original position */
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px); /* Starts 20px lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);    /* Moves to original position */
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px); /* Starts 20px lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);    /* Moves to original position */
+  }
+}
+
+
+
+/* - - - - - For all Sections - - - - -*/
+main {
+    height: 100vh;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+main .section-header {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 0;
+    font-size: 1rem;
+    color: #F2EFE9;
+    animation: fadeInDown .5s ease-out forwards;
+}
+.box {
+  border: 1px solid white;
 }
 
 /* Unique CSS per Section */
 
-/* - - - - - About - - - - -*/
-.about {
-    background-image: url('assets/home-bg1.png');
+/* - - - - - Root ( Landing Page ) - - - - -*/
+.root {
+    background-image: url('assets/bg1.png');
     background-color: black;
     color: #A8875C;
+    overflow: hidden;
 }
-.about-main {
-    height: 90vh;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-.about-main .section-header {
-    display: flex;
-    margin-left: 20px;
-    margin-top: 0;
-    font-size: 1.5rem;
-    color: #F2EFE9;
-}
-.about-main .tagline {
+.root-main .tagline {
     display: flex;
     margin-left: 50px;
-    margin-top: 50px;
+    padding-top: 50px;
     font-weight: 10;
+    animation: fadeInRight .5s ease-out forwards;
 }
-.about-main .description {
+.root-main .description {
     text-align: left;
     margin-left: 70px;
     max-width: 80%;
     color: #F2EFE9;
+    font-size: 1.2rem;
+    animation: fadeInRight .8s ease-out forwards;
+}
+.root-main hr {
+  width: 85%;
+  margin-top: 80px;
+}
+.root-main .enter-site {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+  color:#F2EFE9;
+  animation: fadeInUp .5s ease-out forwards;
+}        
+.root-main .enter-site-btn {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 5px 20px;
+  text-decoration: none;
+  font-size: 1.9rem;
+  color: black;
+  background-color: #A8875C;
+  border-radius: 30px;
+  animation: fadeInUp .8s ease-out forwards;
+}
+.root-main footer {
+    background-color: #191C22;
+    height: 50vh;
+    margin-top: 180px;
+    padding-top: 1px;
+}
+.root-main footer h1{
+  display: flex;
+  justify-content: center;
+  color: #F2EFE9;
+  margin: 30px;
+}
+.root-main footer nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+/* - - - - - Home - - - - -*/
+.home {
+  height: 100vh;
+  background-image: url('assets/bg2.png');
+  background-size: cover;       
+  background-repeat: no-repeat;
+  background-color: black;
+  overflow: hidden;
+  color:#F2EFE9;
+}
+.home-main {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.home-main .tagline {
+  display: flex;
+  margin-left: 50px;
+  font-weight: 10;
+  color:#A8875C;
+  animation: fadeInRight .5s ease-out forwards;
 }
