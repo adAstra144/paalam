@@ -1,3 +1,35 @@
+/* - - - - - Animation - - - - -*/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);   
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);   
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);    
+  }
+}
+
 
 /* - - - - - Header - - - - -*/
 .header {
@@ -9,12 +41,13 @@
   background-color: #191C22;
   padding: 5px 15px;
   border-bottom: 1px solid #2B2F38;
+  z-index: 1;
 }
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Georgia', serif; /* or a serif Google Font for that formal feel */
+  font-family: 'Georgia', serif; 
   font-size: 1.4rem;
   color: #F2EFE9;
   margin-right: 200px;
@@ -36,49 +69,20 @@
   transition: color 0.2s ease;
 }
 .nav-links a:hover {
-  color: #A8875C; /* bronze accent */
+  color: #A8875C; 
 }
-
-
-/* - - - - - Animation - - - - -*/
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px); /* Starts 20px lower */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);    /* Moves to original position */
-  }
-}
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px); /* Starts 20px lower */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);    /* Moves to original position */
-  }
-}
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px); /* Starts 20px lower */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);    /* Moves to original position */
-  }
-}
-
 
 
 /* - - - - - For all Sections - - - - -*/
+body {
+    overflow-x: hidden;
+}
 main {
-    height: auto;
+    min-height: 95vh;
     margin: 0;
     background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+
 }
 main .section-header {
     display: flex;
@@ -90,6 +94,12 @@ main .section-header {
 }
 .box {
   border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  background-color: rgba(32, 36, 44, 0.7);
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* Unique CSS per Section */
@@ -100,9 +110,17 @@ main .section-header {
     background-color: black;
     color: #A8875C;
 }
+.root-main .box {
+  width: 90%;
+  margin-top: 30px;
+}
+.root-main .top-section {
+  display: flex;
+  justify-content: center;
+}
 .root-main .tagline {
     display: flex;
-    margin-left: 50px;
+    justify-content: center;
     padding-top: 10px;
     font-weight: 10;
     animation: fadeInRight .5s ease-out forwards;
@@ -121,14 +139,18 @@ main .section-header {
 }
 .root-main .enter-site {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 35px;
+}
+.root-main .enter-site-text {
+  display: flex;
+  justify-content: center;
   color:#F2EFE9;
   animation: fadeInUp .5s ease-out forwards;
-}        
-.root-main .enter-site-btn section {
-  padding-bottom: 100px;
-}
+}     
+.home-main.enter-site-text h1 {
+  margin: 0;
+}   
 .root-main .enter-site-btn a {
   display: flex;
   margin: 0 auto;
@@ -139,45 +161,56 @@ main .section-header {
   color: black;
   background-color: #A8875C;
   border-radius: 30px;
-  margin-bottom: 100px;
   animation: fadeInUp .8s ease-out forwards;
 }
-.root-main footer {
-    background-color: #191C22;
-    height: 25vh;
-    padding-top: 1px;
-}
-.root-main footer h1{
-  display: flex;
-  justify-content: center;
-  color: #F2EFE9;
-  margin: 30px;
-}
-.root-main footer nav {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-}
+
 
 /* - - - - - Home - - - - -*/
 .home {
   height: 100vh;
-  background-image: url('assets/bg2.png');
+  background-image: url('assets/bg3.png');
   background-size: cover;       
   background-repeat: no-repeat;
-  background-color: black;
-  overflow: hidden;
+  background-color: #0F1115;
   color:#F2EFE9;
+  overflow: hidden;
 }
 .home-main {
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
 }
 .home-main .tagline {
   display: flex;
-  margin-left: 50px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-weight: 10;
   color:#A8875C;
   animation: fadeInRight .5s ease-out forwards;
 }
+.home-main .our-services .box {
+  padding-bottom: 50px;
+}
+.home-main .our-services {
+  display: flex;
+  justify-content: center;
+}
+.home-main .our-services h2 {
+  display: flex;
+  margin-left: 2%;
+  color: #A8875C;
+}
+.home-main .our-services h3 {
+  margin-top: 50px;
+}
+.home-main .our-services .first {
+  margin-top: 0px;
+}
+.home-main .our-services li {
+  margin-left: 3%;
+  color:#F2EFE9;
+}
+.home-main .space {
+  padding-bottom: 10%;
+}
+
+/* - - - - - Store - - - - - */
