@@ -31,11 +31,15 @@
     transform: translateY(0);   
   }
 }
+@view-transition {
+  navigation: auto;
+}
 
 /* - - - - - - Structure Elements - - - - -*/
 html, body {
   height: 100%;
   scroll-behavior: smooth;
+  background-color: var(--bg-darkest);
 }
 body {
   display: flex;
