@@ -32,7 +32,15 @@
   }
 }
 
-
+/* - - - - - - Structure Elements - - - - -*/
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 /* - - - - - Header - - - - -*/
 .header {
@@ -86,7 +94,7 @@ body {
   overflow: hidden;
 }
 main {
-  min-height: 95vh;
+  min-height: 100vh;
   margin: 0;
   background-color: rgba(0, 0, 0, 0.7);
   overflow-y: auto;
@@ -122,6 +130,8 @@ main .section-header {
 }
 .root-main {
   height: 100vh;
+  flex: 1;
+  overflow-y: scroll;
 }
 .root-main .top-section {
   display: flex;
@@ -177,6 +187,60 @@ main .section-header {
 .root-main .enter-site-btn a:hover {
   background-color: var(--accent-maroon);
   color: var(--text-primary);             
+}
+.root-main footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 35vh;
+  margin-top: 20%;
+  background-color: var(--bg-mid);
+}
+.root-main footer hr {
+  margin: 1.5%;
+}
+.root-main footer .logo {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.root-main footer .tagline {
+  margin: 0;
+}
+.root-main footer nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: center;
+}
+.root-main footer .top {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+}
+.root-main footer table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.root-main footer table th, td {
+  /* border: 1px solid var(--border-color); */
+  min-width: 280px;
+  padding: 6px;
+  padding-left: 10%;
+}
+.root-main footer table th {
+  text-align: left;
+}
+.root-main footer table .address {
+  margin-bottom: auto;
+}
+.root-main footer .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.root-main footer .bottom h5 {
+  margin: 10px;
 }
 
 
