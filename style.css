@@ -47,6 +47,32 @@ body {
   min-height: 100vh;
 }
 
+/* - - - - - Scroll - - - - -*/
+/* Firefox */
+* {
+  scrollbar-width: 5px;
+  scrollbar-color: #2B2F38 #0F1115;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F1115;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2B2F38;
+  border-radius: 6px;
+  border: 2px solid #0F1115; /* creates a little padding around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A8875C;
+}
+
 /* - - - - - Header - - - - -*/
 .header {
   display: flex;
@@ -93,10 +119,6 @@ body {
 
 
 /* - - - - - For all Sections - - - - -*/
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #888888 #f1f1f1;
-}
 body {
   background-color: var(--bg-darkest);
   color: var(--text-primary);
@@ -386,8 +408,10 @@ footer .bottom h5 {
 }
 .product-card img {
   width: 100%;
+  min-height: 150px;
   border-radius: 4px;
   background-color: #fff; 
+  color: var(--bg-darkest);
 }
 .product-card h3 {
   font-size: 13px;
