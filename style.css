@@ -35,6 +35,7 @@
 /* - - - - - - Structure Elements - - - - -*/
 html, body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 body {
   display: flex;
@@ -123,7 +124,15 @@ main .section-header {
 .empha {
   color: var(--accent-bronze);
 }
-
+.goTop {
+  text-decoration: none;
+  color: var(--accent-bronze);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.goTop:hover {
+  color: var(--accent-maroon);
+}
 /* - - - - - Footer - - - - -*/
 footer {
   display: flex;
@@ -304,7 +313,7 @@ footer .bottom h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   overflow-y: auto;
 }
 .store-main .tagline {
@@ -405,7 +414,7 @@ footer .bottom h5 {
   color: var(--bg-darkest);
 }
 .store-main footer {
-  padding-bottom: 7%;
+  padding-bottom: 5%;
 }
 
 
@@ -497,5 +506,5 @@ footer .bottom h5 {
 }
 .contact-main footer {
   margin-top: 28%;
-  padding-bottom: 7%;
+  padding-bottom: 5%;
 }
