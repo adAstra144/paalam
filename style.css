@@ -88,6 +88,10 @@ body {
 
 
 /* - - - - - For all Sections - - - - -*/
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888888 #f1f1f1;
+}
 body {
   background-color: var(--bg-darkest);
   color: var(--text-primary);
@@ -118,6 +122,55 @@ main .section-header {
 }
 .empha {
   color: var(--accent-bronze);
+}
+
+/* - - - - - Footer - - - - -*/
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 35vh;
+  width: 100%;
+  background-color: var(--bg-mid);
+}
+footer hr {
+  margin: 1.5%;
+  width: 75%;
+}
+footer nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: center;
+}
+footer .top {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1%;
+}
+footer table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+footer table th, td {
+  /* border: 1px solid var(--border-color); */
+  min-width: 280px;
+  padding: 6px;
+  padding-left: 10%;
+}
+footer table th {
+  text-align: left;
+}
+footer table .address {
+  margin-bottom: auto;
+}
+footer .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .bottom h5 {
+  margin: 10px;
 }
 
 /* Unique CSS per Section */
@@ -183,64 +236,12 @@ main .section-header {
   animation: fadeInDown .2s ease-out forwards;
   transition: background-color 0.2s ease; 
 }
-
 .root-main .enter-site-btn a:hover {
   background-color: var(--accent-maroon);
   color: var(--text-primary);             
 }
 .root-main footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 35vh;
-  margin-top: 20%;
-  background-color: var(--bg-mid);
-}
-.root-main footer hr {
-  margin: 1.5%;
-}
-.root-main footer .logo {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-.root-main footer .tagline {
-  margin: 0;
-}
-.root-main footer nav {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  justify-content: center;
-}
-.root-main footer .top {
-  display: flex;
-  flex-direction: row;
-  margin-top: 2%;
-}
-.root-main footer table {
-  table-layout: fixed;
-  border-collapse: collapse;
-}
-.root-main footer table th, td {
-  /* border: 1px solid var(--border-color); */
-  min-width: 280px;
-  padding: 6px;
-  padding-left: 10%;
-}
-.root-main footer table th {
-  text-align: left;
-}
-.root-main footer table .address {
-  margin-bottom: auto;
-}
-.root-main footer .bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.root-main footer .bottom h5 {
-  margin: 10px;
+  margin-top: 21%;
 }
 
 
@@ -288,6 +289,9 @@ main .section-header {
 }
 .home-main .space {
   padding-bottom: 10%;
+}
+.home-main footer {
+  height: 40vh;
 }
 
 /* - - - - - Store - - - - - */
@@ -400,6 +404,9 @@ main .section-header {
   background-color: var(--accent-bronze);
   color: var(--bg-darkest);
 }
+.store-main footer {
+  padding-bottom: 7%;
+}
 
 
 /* - - - - - Contact - - - - -*/
@@ -463,17 +470,17 @@ main .section-header {
   color: var(--accent-bronze);
   filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
 }
-.contact-main table {
+.contact-main .info table {
   table-layout: fixed;
   margin-left: 2%;
   border-collapse: collapse;
   width: 60%;
 }
-.contact-main th {
+.contact-main .info th {
   text-align: left;
   color: var(--accent-bronze);
 }
-.contact-main td {
+.contact-main .info td {
   padding: 10px;
 }
 .contact-main .add-info {
@@ -487,4 +494,8 @@ main .section-header {
 }
 .contact-main .add-info p {
   font-size: 1.1rem;
+}
+.contact-main footer {
+  margin-top: 28%;
+  padding-bottom: 7%;
 }
