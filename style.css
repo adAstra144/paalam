@@ -81,24 +81,23 @@
 
 /* - - - - - For all Sections - - - - -*/
 body {
-    background-color: var(--bg-darkest);
-    color: var(--text-primary);
-    overflow: hidden;
+  background-color: var(--bg-darkest);
+  color: var(--text-primary);
+  overflow: hidden;
 }
 main {
-    min-height: 95vh;
-    margin: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow-y: auto;
-
+  min-height: 95vh;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
 }
 main .section-header {
-    display: flex;
-    margin-left: 20px;
-    margin-top: 0;
-    font-size: 1rem;
-    color: var(--text-primary);
-    animation: fadeInDown .5s ease-out forwards;
+  display: flex;
+  margin-left: 20px;
+  margin-top: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+  animation: fadeInDown .5s ease-out forwards;
 }
 .box {
   border: 1px solid var(--border-color);
@@ -117,9 +116,9 @@ main .section-header {
 
 /* - - - - - Root - - - - -*/
 .root {
-    background-image: url('assets/bg1.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url('assets/bg1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .root-main {
   height: 100vh;
@@ -129,19 +128,19 @@ main .section-header {
   justify-content: center;
 }
 .root-main .tagline {
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
-    color: var(--accent-bronze);
-    font-weight: 10;
-    animation: fadeInDown .6s ease-out forwards;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  color: var(--accent-bronze);
+  font-weight: 10;
+  animation: fadeInDown .6s ease-out forwards;
 }
 .root-main .description {
-    text-align: left;
-    max-width: 80%;
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    animation: fadeInDown .4s ease-out forwards;
+  text-align: left;
+  max-width: 80%;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  animation: fadeInDown .4s ease-out forwards;
 }
 .root-main hr {
   width: 85%;
@@ -188,7 +187,7 @@ main .section-header {
   background-repeat: no-repeat;
 }
 .home-main {
-    height: 100vh;
+  height: 100vh;
 }
 .home-main .tagline {
   display: flex;
@@ -298,31 +297,31 @@ main .section-header {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
- 
+.product-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-bronze);
+}
 .product-card img {
   width: 100%;
   border-radius: 4px;
   background-color: #fff; 
 }
- 
 .product-card h3 {
   font-size: 13px;
   font-weight: normal;
   line-height: 1.4;
   color: var(--text-primary);
-    margin-top: auto;
+  margin-top: auto;
 }
- 
 .product-card .price {
   font-size: 13px;
   color: var(--accent-bronze);
 }
- 
 .product-card .usd {
   color: var(--text-muted);
 }
- 
 .inquire-btn {
   background-color: var(--text-primary);
   color: var(--bg-darkest);
@@ -333,7 +332,6 @@ main .section-header {
   cursor: pointer;
   align-self: flex-start;
 }
- 
 .inquire-btn:hover {
   background-color: var(--accent-bronze);
   color: var(--bg-darkest);
