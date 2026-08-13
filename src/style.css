@@ -96,13 +96,14 @@ body {
   margin-right: 200px;
 }
 .logo-icon {
-  filter: grayscale(100%);
-  width: 70px;
-  height: 50px;
+  /* filter: grayscale(100%); */
+  width: 40px;
+  height: 40px;
+  padding: 5px;
 }
-.logo-icon:hover {
+/* .logo-icon:hover {
   filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
-}
+} */
 .nav-links {
   display: flex;
   gap: 40px;
@@ -286,6 +287,9 @@ footer .bottom h5 {
   background-size: cover;       
   background-repeat: no-repeat;
 }
+.home header .nav-links a:first-of-type {
+  color: var(--accent-bronze) !important;
+}
 .home-main {
   height: 100vh;
 }
@@ -334,6 +338,9 @@ footer .bottom h5 {
   background: url('assets/white-flower.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+}
+.store header .nav-links a:nth-of-type(2) {
+  color: var(--accent-bronze) !important;
 }
 .store-main {
   display: flex;
@@ -451,6 +458,9 @@ footer .bottom h5 {
   background: url('assets/bg2.png');
   background-size: cover;
   background-repeat: no-repeat;
+}
+.contact header .nav-links a:nth-of-type(3) {
+  color: var(--accent-bronze) !important;
 }
 .contact-main {
   display: flex;
