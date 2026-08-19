@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../src/normalize.css">
     <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="../src/signup.css">
+    <link rel="icon" href="/favicon.svg" type="image/x-icon">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <title>Signup</title>
+    <title>Sign Up</title>
 </head>
 <body class="signup">
 
@@ -14,8 +16,9 @@
 
         <section class="info-section">
             <span class="return">
-                <a href="/home" title="Go to Home">
+                <a href="/home" title="Continue with no account">
                     <img src="../src/assets/arrow-left.svg">
+                    Skip
                 </a>
             </span>
 
@@ -57,16 +60,27 @@
         
         <section class="signup-section">
             
-            <p class="signin">
-                Already have an account? 
-                <a href="/signin">
-                    Sign in
-                </a>
-            </p>
+            <div class="top">
+                <p class="signin">
+                    Already have an account? 
+                    <a href="/signin">
+                        Sign in
+                    </a>
+                </p>
+    
+                <!-- <p class="skip">
+                    <a href="/home">
+                        Skip
+                        <img src="../src/assets/arrow-right.svg">
+                    </a>
+                </p> -->
+            </div>
 
             <h1>Signup for Paalam</h1>
             
             <div id="googleSignInBtn"></div>
+
+            <div class="separator">Or</div>
 
             <form id="signup-form">
 
@@ -105,6 +119,11 @@
                 </div>
             </form>
 
+            <h5>
+                By creating an account, you agree to the Terms of Service. <br>
+                This signup page is inspired by <a href="https://github.com">Github</a>.
+            </h5>
+
         </section>
     </main>   
 
@@ -140,7 +159,7 @@ window.onload = function () {
     // Render the Google Sign-In button inside your modal
     google.accounts.id.renderButton(
     document.getElementById("googleSignInBtn"),
-    { theme: "filled_black", size: "large" } // customization options
+    { theme: "filled_black", size: "large", width: 390 } // customization options
     );
 }
 </script>

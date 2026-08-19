@@ -1,0 +1,61 @@
+.home {
+  background-image: url('assets/bg2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home header .nav-links a:first-of-type {
+  color: var(--accent-bronze) !important;
+}
+
+.home main {
+  height: 100vh;
+}
+
+.home main .tagline {
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-weight: 10;
+  color: var(--accent-bronze);
+  animation: fadeInDown .6s ease-out forwards;
+}
+
+.home main .our-services .box {
+  border-radius: 10px;
+  padding-bottom: 2%;
+  animation: fadeInDown .4s ease-out forwards;
+}
+
+.home main .our-services {
+  display: flex;
+  justify-content: center;
+}
+
+.home main .our-services h2 {
+  display: flex;
+  margin-left: 2%;
+  color: var(--accent-bronze);
+}
+
+.home main .our-services h3 {
+  margin-top: 5%;
+}
+
+.home main .our-services .first {
+  margin-top: 0px;
+}
+
+.home main .our-services li {
+  margin-left: 3%;
+  color: var(--text-primary);
+}
+
+.home main .space {
+  padding-bottom: 10%;
+}
+
+.home main footer {
+  height: 40vh;
+}

@@ -1,0 +1,201 @@
+.signup {
+  background-image: url(assets/bg5.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: fadeInRight .4s ease-out forwards;
+}
+
+.signup main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.signup main .info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
+.signup main .info-section .return {
+  width: fit-content;
+  text-decoration: none;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.signup main .info-section .return a {
+  color: var(--text-primary);
+  text-decoration: none;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+}
+
+.signup main .info-section .return img {
+  height: 35px;
+  width: 35px;
+  filter: invert(100%);
+}
+
+.signup main .info-section .return:hover :is(img, a) {
+    color: var(--accent-bronze);
+    filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
+}
+
+.signup main .info-section header h1 {
+  text-align: center;
+  margin-top: 7%;
+  margin-bottom: 15px;
+  color: var(--accent-bronze);
+}
+
+.signup main .info-section header h4 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.signup main .info-section details {
+  width: 80%;
+}
+
+.signup main .info-section details summary {
+  text-align: center;
+}
+
+.signup main .info-section details summary:hover {
+  color: var(--accent-bronze);
+}
+
+.signup main .info-section details li {
+  list-style-type: "✓  ";
+  font-size: 1.1rem;
+  margin-top: 35px;
+}
+
+.signup main .info-section details li p {
+  margin: 0;
+  margin-top: 5px;
+}
+
+.signup main .signup-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  background-color: var(--bg-dark);
+}
+
+.signup main .signup-section .signin {
+  align-self: flex-start;
+  margin-left: 20px;
+  color: var(--text-primary);
+}
+
+.signup main .signup-section .top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.signup main .signup-section .signin a {
+  text-decoration: underline;
+  color: var(--accent-bronze);
+}
+
+/* .signup main .signup-section .skip {
+    margin-right: 2%;
+}
+
+.signup main .signup-section .skip a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.signup main .signup-section .skip img {
+    height: 40px;
+    width: 40px;
+    filter: invert(100%);
+}
+
+.signup main .signup-section .skip img:hover {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
+} */
+
+.signup main .signup-section h1 {
+  margin-bottom: 5%;
+}
+
+.signup main .signup-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin-top: 2%;
+  justify-content: center;
+}
+
+.signup main .signup-section form div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.signup main .signup-section form label {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.signup main .signup-section form input {
+  width: 100%;
+  background-color: var(--bg-mid);
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--text-primary);
+  height: 30px;
+}
+
+.signup main .signup-section form .terms {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4%;
+}
+
+.signup main .signup-section form .terms label {
+  margin: auto 0;
+  margin-left: 2%;
+  font-size: 1.1rem;
+}
+
+.signup main .signup-section form .terms input {
+  scale: 100%;
+  width: 20px;
+}
+
+.signup main .signup-section form .submit input {
+  background-color: var(--accent-bronze);
+  color: var(--bg-darkest);
+  height: 45px;
+  font-size: 1.2rem;
+}
+
+.signup main .signup-section h5 {
+  margin-top: auto;
+  margin-bottom: 5%;
+  color: var(--text-muted);
+}
+
+.signup main .signup-section h5 a {
+  text-decoration: underline;
+  color: var(--text-muted);
+}

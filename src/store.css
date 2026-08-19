@@ -1,0 +1,132 @@
+.store {
+  background: url('assets/bg3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.store header .nav-links a:nth-of-type(2) {
+  color: var(--accent-bronze) !important;
+}
+
+.store main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.store main .tagline {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 10;
+  color: var(--accent-bronze);
+  animation: fadeInDown .6s ease-out forwards;
+}
+
+.store main .product-grid1 {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(25, 28, 34, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 2%;
+  max-width: 1000px;
+  animation: fadeInDown .4s ease-out forwards;
+}
+
+.store main .product-grid2 {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(25, 28, 34, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 5%;
+  max-width: 1000px;
+  animation: fadeInDown .2s ease-out forwards;
+}
+
+.store main .product-grid3 {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(25, 28, 34, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  max-width: 1000px;
+  animation: fadeInDown .1s ease-out forwards;
+}
+
+.store main .product-card {
+  background-color: var(--bg-mid);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.store main .product-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-bronze);
+}
+
+.store main .product-card img {
+  width: 100%;
+  min-height: 150px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: var(--bg-darkest);
+}
+
+.store main .product-card h3 {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-top: auto;
+}
+
+.store main .product-card .price {
+  font-size: 13px;
+  color: var(--accent-bronze);
+}
+
+.store main .product-card .usd {
+  color: var(--text-muted);
+}
+
+.store main .inquire-btn {
+  background-color: var(--text-primary);
+  color: var(--bg-darkest);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.store main .inquire-btn:hover {
+  background-color: var(--accent-bronze);
+  color: var(--bg-darkest);
+}
+
+.store main footer {
+  padding-bottom: 5%;
+}

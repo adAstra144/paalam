@@ -1,0 +1,110 @@
+.contact {
+  background: url('assets/bg4.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contact header .nav-links a:nth-of-type(3) {
+  color: var(--accent-bronze) !important;
+}
+
+.contact main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact main .tagline {
+  margin-top: 20px;
+  color: var(--accent-bronze);
+  animation: fadeInDown .6s ease-out forwards;
+}
+
+.contact main .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.contact main .box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  animation: fadeInDown .4s ease-out forwards;
+}
+
+.contact main .info-header {
+  margin-left: 2%;
+  color: var(--accent-bronze);
+}
+
+.contact main .socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-left: 2%;
+  padding: 10px;
+}
+
+.contact main .icons a {
+  text-decoration: none;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.contact main .icons img {
+  top: auto;
+  width: 30px;
+  height: 30px;
+  filter: invert(100%);
+}
+
+.contact main .icons span {
+  margin-left: 2%;
+  font-size: 1.2rem;
+  top: auto;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.contact main .icons a:hover :is(img, span) {
+  color: var(--accent-bronze);
+  filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
+}
+
+.contact main .info table {
+  table-layout: fixed;
+  margin-left: 2%;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+.contact main .info th {
+  text-align: left;
+  color: var(--accent-bronze);
+}
+
+.contact main .info td {
+  padding: 10px;
+}
+
+.contact main .add-info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 2%;
+}
+
+.contact main .add-info h2 {
+  color: var(--accent-bronze);
+}
+
+.contact main .add-info p {
+  font-size: 1.1rem;
+}
+
+.contact main footer {
+  margin-top: 28%;
+  padding-bottom: 5%;
+}

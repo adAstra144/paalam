@@ -1,0 +1,74 @@
+.root {
+  background-image: url('assets/bg1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.root main {
+  height: 100vh;
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.root main .top-section {
+  display: flex;
+  justify-content: center;
+}
+
+.root main .tagline {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  color: var(--accent-bronze);
+  font-weight: 10;
+  animation: fadeInDown .6s ease-out forwards;
+}
+
+.root main .description {
+  text-align: left;
+  max-width: 80%;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  animation: fadeInDown .4s ease-out forwards;
+}
+
+.root main hr {
+  width: 85%;
+  margin-top: 3%;
+}
+
+.root main .enter-site {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.root main .enter-site-text {
+  display: flex;
+  justify-content: center;
+  color: var(--accent-bronze);
+  animation: fadeInDown .2s ease-out forwards;
+}
+
+.root main .enter-site-btn a {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 5px 20px;
+  text-decoration: none;
+  font-size: 1.9rem;
+  color: var(--bg-darkest);
+  background-color: var(--text-primary);
+  border-radius: 30px;
+  animation: fadeInDown .2s ease-out forwards;
+  transition: background-color 0.2s ease;
+}
+
+.root main .enter-site-btn a:hover {
+  background-color: var(--accent-maroon);
+  color: var(--text-primary);
+}
+
+.root main footer {
+  margin-top: 21%;
+}
