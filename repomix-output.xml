@@ -42,6 +42,7 @@ The content is organized as follows:
 <directory_structure>
 notes/
   color-scheme.md
+  plans.md
 public/
   favicon.svg
 sections/
@@ -54,19 +55,13 @@ src/
   assets/
     account.svg
     arrow-left.svg
-    bg0.png
     bg1.png
     bg2.png
     bg3.png
     bg4.png
     bg5.png
-    bg6.png
-    bg7.png
-    bg8.png
-    cart.png
     email.svg
     facebook.svg
-    ghost0.png
     instagram.svg
     item-1.png
     item-2.png
@@ -74,7 +69,6 @@ src/
     item-4.png
     item-5.png
     phone.svg
-    white-flower.jpg
   normalize.css
   style.css
 index.html
@@ -86,10 +80,9 @@ vite.config.js
 <files>
 This section contains the contents of the repository's files.
 
-<file path="src/assets/arrow-left.svg">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
-</svg>
+<file path="notes/plans.md">
+- About section (More on about me the developer)
+- Signin section (small box in the middle refer to githubs)
 </file>
 
 <file path="notes/color-scheme.md">
@@ -221,154 +214,16 @@ Hover/active state:
 
 </file>
 
-<file path="sections/signup.html">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/normalize.css">
-    <link rel="stylesheet" href="../src/style.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <title>Signup</title>
-</head>
-<body class="signup">
-
-    <main>
-
-        <section class="info-section">
-            <div class="return">
-                <a href="/home" title="Go back">
-                    <img src="../src/assets/arrow-left.svg">
-                </a>
-            </div>
-
-            <header>
-                <h1>Create your account</h1>   
-                <h4>Every arrangement, remembered with care.</h4>
-            </header>
-
-            <details>
-                <summary>Click to see account benefits</summary>
-
-                <ul>
-                    <li>
-                        Track service arrangements
-                        
-                        <p>View real-time status of bookings, from initial arrangement to service completion</p>
-                    </li>
-
-                    <li>
-                        Centralized document access
-                       
-                        <p>Store and retrieve death certificates, permits, and other required documents in one place</p>
-                    </li>
-
-                    <li>
-                        Faster future bookings
-
-                        <p>Saved family and billing details for repeat or additional services (e.g., anniversary masses, exhumation requests)</p>
-                    </li>
-
-                    <li>
-                        Direct communication log
-
-                        <p>A record of correspondence with Paalam staff, rather than relying solely on calls or messages</p>
-                    </li>
-                </ul>
-            </details>
-        </section>
-        
-        <section class="signup-section">
-            
-            <p class="signin">
-                Already have an account? 
-                <a href="/signin">
-                    Sign in
-                </a>
-            </p>
-
-            <h1>Signup for Paalam</h1>
-            
-            <div id="googleSignInBtn"></div>
-
-            <form>
-
-                <div>
-                    <label>Full Name</label>
-                    <input type="text">
-                </div>
-
-                <div>
-                    <label>Email</label>
-                    <input type="email">
-                </div>
-
-                <div>
-                    <label>Phone</label>
-                    <input type="tel">
-                </div>
-
-                <div>
-                    <label>Password</label>
-                    <input type="password">
-                </div>
-
-                <div>
-                    <label>Confirm Password</label>
-                    <input type="password">
-                </div>
-
-                <div class="terms">
-                    <input type="checkbox">
-                    <label>I agree to the Terms & Privacy Policy</label>
-                </div>
-
-                <div class="submit">
-                    <input type="submit" value="submit">
-                </div>
-            </form>
-
-        </section>
-    </main>   
-
-<script>
-function handleCredentialResponse(response) {
-    const data = parseJwt(response.credential);
-    window.setGoogleUser(data); // Your existing function
-}
-
-function parseJwt(token) {
-    let base64Url = token.split('.')[1];
-    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    let jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
-    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-    return JSON.parse(jsonPayload);
-}
-
-window.onload = function () {
-    google.accounts.id.initialize({
-    client_id: "1039434473386-fm6bjua9mmpb6umhf6lur1klb806urce.apps.googleusercontent.com",
-    callback: handleCredentialResponse
-    });
-
-    // Render the Google Sign-In button inside your modal
-    google.accounts.id.renderButton(
-    document.getElementById("googleSignInBtn"),
-    { theme: "filled_black", size: "large" } // customization options
-    );
-}
-</script>
-
-</body>
-</html>
-</file>
-
 <file path="src/assets/account.svg">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>
+</file>
+
+<file path="src/assets/arrow-left.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
 </svg>
 </file>
 
@@ -765,793 +620,180 @@ template {
 }
 </file>
 
-<file path="src/style.css">
-/* - - - - - Color Pallete - - - - -*/
-:root {
-  --bg-darkest: #0F1115;
-  --bg-dark: #191C22;
-  --bg-mid: #20242C;
-  --accent-bronze: #A8875C;
-  --accent-maroon: #6B2E2E;
-  --text-primary: #F2EFE9;
-  --text-muted: #A9A49C;
-  --border-color: #2B2F38; 
+<file path="sections/signup.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/normalize.css">
+    <link rel="stylesheet" href="../src/style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <title>Signup</title>
+</head>
+<body class="signup">
+
+    <main>
+
+        <section class="info-section">
+            <span class="return">
+                <a href="/home" title="Go to Home">
+                    <img src="../src/assets/arrow-left.svg">
+                </a>
+            </span>
+
+            <header>
+                <h1>Create your account</h1>   
+                <h4>Every arrangement, remembered with care.</h4>
+            </header>
+
+            <details open>
+                <summary>Account benefits</summary>
+
+                <ul>
+                    <li>
+                        Track service arrangements
+                        
+                        <p>View real-time status of bookings, from initial arrangement to service completion</p>
+                    </li>
+
+                    <li>
+                        Centralized document access
+                       
+                        <p>Store and retrieve death certificates, permits, and other required documents in one place</p>
+                    </li>
+
+                    <li>
+                        Faster future bookings
+
+                        <p>Saved family and billing details for repeat or additional services (e.g., anniversary masses, exhumation requests)</p>
+                    </li>
+
+                    <li>
+                        Direct communication log
+
+                        <p>A record of correspondence with Paalam staff, rather than relying solely on calls or messages</p>
+                    </li>
+                </ul>
+            </details>
+        </section>
+        
+        <section class="signup-section">
+            
+            <p class="signin">
+                Already have an account? 
+                <a href="/signin">
+                    Sign in
+                </a>
+            </p>
+
+            <h1>Signup for Paalam</h1>
+            
+            <div id="googleSignInBtn"></div>
+
+            <form id="signup-form">
+
+                <div>
+                    <label>Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+
+                <div>
+                    <label>Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+
+                <div>
+                    <label>Phone</label>
+                    <input type="tel" id="signup-phone" required>
+                </div>
+
+                <div>
+                    <label>Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+
+                <div>
+                    <label>Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+
+                <div class="terms">
+                    <input type="checkbox" required>
+                    <label>I agree to the Terms & Privacy Policy</label>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="submit">
+                </div>
+            </form>
+
+        </section>
+    </main>   
+
+<script>
+function handleCredentialResponse(response) {
+    const data = parseJwt(response.credential);
+    
+    const user = {
+        name: data.name,
+        email: data.email,
+        picture: data.picture
+    };
+    
+    localStorage.setItem('paalam_user', JSON.stringify(user));
+    window.location.href = '/home';
 }
 
-/* - - - - - Animation - - - - -*/
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);   
-  }
-}
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);   
-  }
-}
-@view-transition {
-  navigation: auto;
+function parseJwt(token) {
+    let base64Url = token.split('.')[1];
+    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    let jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    return JSON.parse(jsonPayload);
 }
 
-/* - - - - - - Structure Elements - - - - -*/
-html, body {
-  height: 100%;
-  scroll-behavior: smooth;
-  background-color: var(--bg-darkest);
+window.onload = function () {
+    google.accounts.id.initialize({
+    client_id: "957269107783-bmmvsgrgfm115gb986hd4mvvdtfc9gr9.apps.googleusercontent.com",
+    callback: handleCredentialResponse
+    });
+
+    // Render the Google Sign-In button inside your modal
+    google.accounts.id.renderButton(
+    document.getElementById("googleSignInBtn"),
+    { theme: "filled_black", size: "large" } // customization options
+    );
 }
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+</script>
 
-/* - - - - - Scroll - - - - -*/
-/* Firefox */
-* {
-  scrollbar-width: 5px;
-  scrollbar-color: #2B2F38 #0F1115;
-}
+<script>
+    document.getElementById('signup-form').addEventListener('submit', (e) => {
+        e.preventDefault();
 
-/* Chrome, Edge, Safari */
-::-webkit-scrollbar {
-  width: 10px;
-}
+        const password = document.getElementById('signup-password').value;
+        const confirmPassword = document.getElementById('signup-confirm-password').value;
 
-::-webkit-scrollbar-track {
-  background: #0F1115;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #2B2F38;
-  border-radius: 6px;
-  border: 2px solid #0F1115; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #A8875C;
-}
-
-/* - - - - - Header - - - - -*/
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: var(--bg-dark);
-  padding: 2px 15px;
-  border-bottom: 1px solid var(--border-color);
-  z-index: 1;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Georgia', serif; 
-  font-size: 1.4rem;
-  color: var(--text-primary);
-}
-.logo-icon {
-  width: 40px;
-  height: 40px;
-  padding: 5px;
-}
-.nav-links {
-  display: flex;
-  gap: 40px;
-  margin-right: auto;
-  margin-left: 1%;
-}
-.nav-links a {
-  color: var(--text-primary);
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.2s ease;
-}
-.nav-links a:hover {
-  color: var(--accent-bronze); 
-}
-.account {
-  display: flex;
-  align-items: center;
-
-  :hover {
-    color: var(--accent-bronze);
-    filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  img {
-    width: 30px;
-    height: 30px;
-    filter: invert(100%); 
-  }
-
-}
-
-/* - - - - - For all Sections - - - - -*/
-body {
-  background-color: var(--bg-darkest);
-  color: var(--text-primary);
-  overflow: hidden;
-}
-main {
-  min-height: 100vh;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  overflow-y: auto;
-}
-main .section-header {
-  display: flex;
-  margin-left: 20px;
-  margin-top: 0;
-  font-size: 1rem;
-  color: var(--text-primary);
-  animation: fadeInDown .5s ease-out forwards;
-}
-.box {
-  border: 1px solid var(--border-color);
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  background-color: rgba(32, 36, 44, 0.7);
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.empha {
-  color: var(--accent-bronze);
-}
-.goTop {
-  text-decoration: none;
-  color: var(--accent-bronze);
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-.goTop:hover {
-  color: var(--accent-maroon);
-}
-
-/* - - - - - Footer - - - - -*/
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 35vh;
-  width: 100%;
-  background-color: var(--bg-mid);
-
-  hr {
-    margin: 1.5%;
-    width: 75%;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    justify-content: center;
-  }
-
-  .top {
-    display: flex;
-    flex-direction: row;
-    margin-top: 1%;
-  }
-
-  table {
-    table-layout: fixed;
-    border-collapse: collapse;
-  }
-
-  table th, td {
-    /* border: 1px solid var(--border-color); */ /* Uncomment to show border */
-    min-width: 280px;
-    padding: 6px;
-    padding-left: 10%;
-  }
-  table th {
-    text-align: left;
-  }
-  table .address {
-    margin-bottom: auto;
-  }
-
-  .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .bottom h5 {
-    margin: 10px;
-  }
-}
-
-/* Unique CSS per Section */
-
-/* - - - - - Root - - - - -*/
-.root {
-  background-image: url('assets/bg1.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.root main {
-  height: 100vh;
-  flex: 1;
-  overflow-y: scroll;
-  
-  .top-section {
-    display: flex;
-    justify-content: center;
-  }
-
-  .tagline {
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
-    color: var(--accent-bronze);
-    font-weight: 10;
-    animation: fadeInDown .6s ease-out forwards;
-  }
-  
-  .description {
-    text-align: left;
-    max-width: 80%;
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    animation: fadeInDown .4s ease-out forwards;
-  }
-
-  hr {
-    width: 85%;
-    margin-top: 3%;
-  }
-  
-  .enter-site {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .enter-site-text {
-    display: flex;
-    justify-content: center;
-    color:var(--accent-bronze);
-    animation: fadeInDown .2s ease-out forwards;
-  }       
-  
-  .enter-site-btn a {
-    display: flex;
-    margin: 0 auto;
-    width: fit-content;
-    padding: 5px 20px;
-    text-decoration: none;
-    font-size: 1.9rem;
-    color: var(--bg-darkest);
-    background-color: var(--text-primary);
-    border-radius: 30px;
-    animation: fadeInDown .2s ease-out forwards;
-    transition: background-color 0.2s ease; 
-  }
-  
-  .enter-site-btn a:hover {
-    background-color: var(--accent-maroon);
-    color: var(--text-primary);             
-  }
-  
-  footer {
-    margin-top: 21%;
-  }
-}
-
-
-/* - - - - - Home - - - - -*/
-.home {
-  background-image: url('assets/bg3.png');
-  background-size: cover;       
-  background-repeat: no-repeat;
-  
-  header .nav-links a:first-of-type {
-    color: var(--accent-bronze) !important;
-  }
-}
-.home main {
-  height: 100vh;
-  
-  .tagline {
-    display: flex;
-    justify-content: center;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    font-weight: 10;
-    color:var(--accent-bronze);
-    animation: fadeInDown .6s ease-out forwards;
-  }
-  
-  .our-services .box {
-    border-radius: 10px;
-    padding-bottom: 2%;
-    animation: fadeInDown .4s ease-out forwards;
-  }
-  
-  .our-services {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .our-services h2 {
-    display: flex;
-    margin-left: 2%;
-    color: var(--accent-bronze);
-  }
-  
-  .our-services h3 {
-    margin-top: 5%;
-  }
-  
-  .our-services .first {
-    margin-top: 0px;
-  }
-  
-  .our-services li {
-    margin-left: 3%;
-    color:var(--text-primary);
-  }
-  
-  .space {
-    padding-bottom: 10%;
-  }
-  
-  footer {
-    height: 40vh;
-  }
-}
-
-/* - - - - - Store - - - - - */
-.store {
-  background: url('assets/white-flower.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  
-  header .nav-links a:nth-of-type(2) {
-    color: var(--accent-bronze) !important;
-  }
-}
-.store main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  overflow-y: auto;
-  
-  .tagline {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-weight: 10;
-    color:var(--accent-bronze);
-    animation: fadeInDown .6s ease-out forwards;
-  }
-  
-  .product-grid1 {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: rgba(25, 28, 34, 0.85);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 32px;
-    margin-top: 2%;
-    max-width: 1000px;
-    animation: fadeInDown .4s ease-out forwards;
-  }
-  
-  .product-grid2 {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: rgba(25, 28, 34, 0.85);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 32px;
-    margin-top: 5%;
-    max-width: 1000px;
-    animation: fadeInDown .2s ease-out forwards;
-  }
-  
-  .product-grid3 {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: rgba(25, 28, 34, 0.85); 
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 32px;
-    margin-top: 5%;
-    margin-bottom: 10%;
-    max-width: 1000px;
-    animation: fadeInDown .1s ease-out forwards;
-  }
-  
-  .product-card {
-    background-color: var(--bg-mid);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 16px;
-    width: 180px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
-  
-  .product-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent-bronze);
-  }
-  
-  .product-card img {
-    width: 100%;
-    min-height: 150px;
-    border-radius: 4px;
-    background-color: #fff; 
-    color: var(--bg-darkest);
-  }
-  
-  .product-card h3 {
-    font-size: 13px;
-    font-weight: normal;
-    line-height: 1.4;
-    color: var(--text-primary);
-    margin-top: auto;
-  }
-  
-  .product-card .price {
-    font-size: 13px;
-    color: var(--accent-bronze);
-  }
-  
-  .product-card .usd {
-    color: var(--text-muted);
-  }
-  
-  .inquire-btn {
-    background-color: var(--text-primary);
-    color: var(--bg-darkest);
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 13px;
-    cursor: pointer;
-    align-self: flex-start;
-  }
-  
-  .inquire-btn:hover {
-    background-color: var(--accent-bronze);
-    color: var(--bg-darkest);
-  }
-  
-  footer {
-    padding-bottom: 5%;
-  }
-}
-
-
-/* - - - - - Contact - - - - -*/
-.contact {
-  background: url('assets/bg2.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  
-  header .nav-links a:nth-of-type(3) {
-    color: var(--accent-bronze) !important;
-  }
-}
-.contact main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  .tagline {
-    margin-top: 20px;
-    color: var(--accent-bronze);
-    animation: fadeInDown .6s ease-out forwards;
-  }
-  
-  .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-  }
-  
-  .box {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    animation: fadeInDown .4s ease-out forwards;
-  }
-  
-  .info-header {
-    margin-left: 2%;
-    color: var(--accent-bronze);
-  }
-  
-  .socials {
-    display: flex;
-    flex-direction: column;
-    gap: 1.1rem;
-    margin-left: 2%;
-    padding: 10px;
-  }
-  
-  .icons a {
-    text-decoration: none;
-    color: var(--text-primary);
-    cursor: pointer;
-  }
-  
-  .icons img {
-    top: auto;
-    width: 30px;
-    height: 30px;
-    filter: invert(100%);
-  }
-  
-  .icons span {
-    margin-left: 2%;
-    font-size: 1.2rem;
-    top: auto;
-    color: var(--text-primary);
-    cursor: pointer;
-  }
-  
-  .icons a:hover :is(img, span) {
-    color: var(--accent-bronze);
-    filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
-  }
-  
-  .info table {
-    table-layout: fixed;
-    margin-left: 2%;
-    border-collapse: collapse;
-    width: 60%;
-  }
-  
-  .info th {
-    text-align: left;
-    color: var(--accent-bronze);
-  }
-  
-  .info td {
-    padding: 10px;
-  }
-  
-  .add-info {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin-left: 2%;
-  }
-  
-  .add-info h2 {
-    color: var(--accent-bronze);
-  }
-  
-  .add-info p {
-    font-size: 1.1rem;
-  }
-  
-  footer {
-    margin-top: 28%;
-    padding-bottom: 5%;
-  }
-}
-
-/* - - - - - Signup page - - - - -*/
-.signup {
-  background-image: url(assets/bg7.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.signup main {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  .info-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 50%;
-
-    .return {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      width: 100%;
-      text-decoration: none;
-
-      a {
-        color: var(--text-primary);
-        text-decoration: none;
-        width: fit-content;
-      }
-
-      img {
-        margin-top: 10px;
-        margin-left: 10px;
-        height: 35px;
-        width: 35px;
-        filter: invert(100%);
-      }
-
-      :hover {
-        filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
-      }
-    }
-
-    header {
-      h1 {
-        text-align: center;
-        margin-top: 8%;
-        margin-bottom: 15px;
-        color: var(--accent-bronze);
-      }
-  
-      h4 {
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 30px;
-      }
-    }
-
-    details {
-      width: 80%;
-      
-      summary {
-        text-align: center;
-       
-        :hover {
-        color: var(--accent-bronze);
-        }
-      }
-
-      li {
-        list-style-type: "✓  ";
-        font-size: 1.1rem;
-        margin-top: 30px;
-
-        p {
-          margin: 0;
-          margin-top: 5px;
-        }
-      }
-    }
-  }
-
-  .signup-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 50%;
-    background-color: var(--bg-dark);
-
-    .signin {
-      align-self: flex-start;
-      margin-left: 20px;
-      color: var(--text-primary);
-
-      a {
-        text-decoration: none;
-        color: var(--accent-bronze);
-      }
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 50%;
-      margin-top: 5%;
-      justify-content: center;
-
-      div {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        margin-bottom: 6%;
-      }
-
-      label {
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-      }
-
-      input {
-        width: 100%;
-        background-color: var(--bg-mid);
-        border: 2px solid var(--border-color);
-        border-radius: 5px;
-        color: var(--text-primary);
-        height: 30px;
-      }
-
-      .terms {
-        display: flex;
-        flex-direction: row;
-        margin-top: 4%;
-
-        label {
-          margin: auto 0;
-          margin-left: 2%;
-          font-size: 1.1rem;
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return;
         }
 
-        input {
-          scale: 100%;
-          width: 20px;
-        }
-      }
+        const user = {
+            name: document.getElementById('signup-name').value,
+            email: document.getElementById('signup-email').value,
+            picture: '../src/assets/account.svg', // fallback since there's no photo from a form
+            isDefaultIcon: true // add this
+        };
 
-      .submit input {
-        background-color: var(--accent-bronze);
-        color: var(--bg-darkest);
-        height: 45px;
-        font-size: 1.2rem;
-      }
-    }
-  }
-}
+        localStorage.setItem('paalam_user', JSON.stringify(user));
+        window.location.href = '/home';
+    });
+</script>
 
-#googleSignInBtn {
-  all: unset;
-  width: 50%;
-  margin-top: 2%;
-}
+</body>
+</html>
 </file>
 
 <file path="vercel.json">
@@ -1611,6 +853,894 @@ export default defineConfig({
 })
 </file>
 
+<file path="src/style.css">
+/* ----- Color Palette ----- */
+
+:root {
+  --bg-darkest: #0F1115;
+  --bg-dark: #191C22;
+  --bg-mid: #20242C;
+  --accent-bronze: #A8875C;
+  --accent-maroon: #6B2E2E;
+  --text-primary: #F2EFE9;
+  --text-muted: #A9A49C;
+  --border-color: #2B2F38;
+}
+
+/* ----- Animation ----- */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+/* ----- Structure Elements ----- */
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+  background-color: var(--bg-darkest);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ----- Scroll ----- */
+
+/* Firefox */
+
+* {
+  scrollbar-width: 5px;
+  scrollbar-color: #2B2F38 #0F1115;
+}
+
+/* Chrome, Edge, Safari */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F1115;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2B2F38;
+  border-radius: 6px;
+  border: 2px solid #0F1115;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A8875C;
+}
+
+/* ----- Header ----- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-dark);
+  padding: 2px 15px;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Georgia', serif;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  margin-right: auto;
+  margin-left: 1%;
+}
+
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-bronze);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+}
+
+.account a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.account .account-icon {
+  width: 30px;
+  height: 30px;
+  filter: invert(100%);
+}
+
+.account-avatar-default {
+  filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
+}
+
+/* ----- For all Sections ----- */
+
+body {
+  background-color: var(--bg-darkest);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+main {
+  min-height: 100vh;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
+}
+
+main .section-header {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+  animation: fadeInDown .5s ease-out forwards;
+}
+
+.box {
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  background-color: rgba(32, 36, 44, 0.7);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.empha {
+  color: var(--accent-bronze);
+}
+
+.goTop {
+  text-decoration: none;
+  color: var(--accent-bronze);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.goTop:hover {
+  color: var(--accent-maroon);
+}
+
+/* ----- Footer ----- */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 35vh;
+  width: 100%;
+  background-color: var(--bg-mid);
+}
+
+footer hr {
+  margin: 1.5%;
+  width: 75%;
+}
+
+footer nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: center;
+}
+
+footer .top {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1%;
+}
+
+footer table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+footer table th,
+footer table td {
+  /* border: 1px solid var(--border-color); */
+  /* Uncomment to show border */
+  min-width: 280px;
+  padding: 6px;
+  padding-left: 10%;
+}
+
+footer table th {
+  text-align: left;
+}
+
+footer table .address {
+  margin-bottom: auto;
+}
+
+footer .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .bottom h5 {
+  margin: 10px;
+}
+
+/* ----- Unique CSS per Section ----- */
+
+/* ----- Root ----- */
+
+.root {
+  background-image: url('assets/bg1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.root main {
+  height: 100vh;
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.root main .top-section {
+  display: flex;
+  justify-content: center;
+}
+
+.root main .tagline {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  color: var(--accent-bronze);
+  font-weight: 10;
+  animation: fadeInDown .6s ease-out forwards;
+}
+
+.root main .description {
+  text-align: left;
+  max-width: 80%;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  animation: fadeInDown .4s ease-out forwards;
+}
+
+.root main hr {
+  width: 85%;
+  margin-top: 3%;
+}
+
+.root main .enter-site {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.root main .enter-site-text {
+  display: flex;
+  justify-content: center;
+  color: var(--accent-bronze);
+  animation: fadeInDown .2s ease-out forwards;
+}
+
+.root main .enter-site-btn a {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 5px 20px;
+  text-decoration: none;
+  font-size: 1.9rem;
+  color: var(--bg-darkest);
+  background-color: var(--text-primary);
+  border-radius: 30px;
+  animation: fadeInDown .2s ease-out forwards;
+  transition: background-color 0.2s ease;
+}
+
+.root main .enter-site-btn a:hover {
+  background-color: var(--accent-maroon);
+  color: var(--text-primary);
+}
+
+.root main footer {
+  margin-top: 21%;
+}
+
+/* ----- Home ----- */
+
+.home {
+  background-image: url('assets/bg2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home header .nav-links a:first-of-type {
+  color: var(--accent-bronze) !important;
+}
+
+.home main {
+  height: 100vh;
+}
+
+.home main .tagline {
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-weight: 10;
+  color: var(--accent-bronze);
+  animation: fadeInDown .6s ease-out forwards;
+}
+
+.home main .our-services .box {
+  border-radius: 10px;
+  padding-bottom: 2%;
+  animation: fadeInDown .4s ease-out forwards;
+}
+
+.home main .our-services {
+  display: flex;
+  justify-content: center;
+}
+
+.home main .our-services h2 {
+  display: flex;
+  margin-left: 2%;
+  color: var(--accent-bronze);
+}
+
+.home main .our-services h3 {
+  margin-top: 5%;
+}
+
+.home main .our-services .first {
+  margin-top: 0px;
+}
+
+.home main .our-services li {
+  margin-left: 3%;
+  color: var(--text-primary);
+}
+
+.home main .space {
+  padding-bottom: 10%;
+}
+
+.home main footer {
+  height: 40vh;
+}
+
+/* ----- Store ----- */
+
+.store {
+  background: url('assets/bg3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.store header .nav-links a:nth-of-type(2) {
+  color: var(--accent-bronze) !important;
+}
+
+.store main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.store main .tagline {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 10;
+  color: var(--accent-bronze);
+  animation: fadeInDown .6s ease-out forwards;
+}
+
+.store main .product-grid1 {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(25, 28, 34, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 2%;
+  max-width: 1000px;
+  animation: fadeInDown .4s ease-out forwards;
+}
+
+.store main .product-grid2 {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(25, 28, 34, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 5%;
+  max-width: 1000px;
+  animation: fadeInDown .2s ease-out forwards;
+}
+
+.store main .product-grid3 {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(25, 28, 34, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  max-width: 1000px;
+  animation: fadeInDown .1s ease-out forwards;
+}
+
+.store main .product-card {
+  background-color: var(--bg-mid);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.store main .product-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-bronze);
+}
+
+.store main .product-card img {
+  width: 100%;
+  min-height: 150px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: var(--bg-darkest);
+}
+
+.store main .product-card h3 {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-top: auto;
+}
+
+.store main .product-card .price {
+  font-size: 13px;
+  color: var(--accent-bronze);
+}
+
+.store main .product-card .usd {
+  color: var(--text-muted);
+}
+
+.store main .inquire-btn {
+  background-color: var(--text-primary);
+  color: var(--bg-darkest);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.store main .inquire-btn:hover {
+  background-color: var(--accent-bronze);
+  color: var(--bg-darkest);
+}
+
+.store main footer {
+  padding-bottom: 5%;
+}
+
+/* ----- Contact ----- */
+
+.contact {
+  background: url('assets/bg4.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contact header .nav-links a:nth-of-type(3) {
+  color: var(--accent-bronze) !important;
+}
+
+.contact main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact main .tagline {
+  margin-top: 20px;
+  color: var(--accent-bronze);
+  animation: fadeInDown .6s ease-out forwards;
+}
+
+.contact main .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.contact main .box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  animation: fadeInDown .4s ease-out forwards;
+}
+
+.contact main .info-header {
+  margin-left: 2%;
+  color: var(--accent-bronze);
+}
+
+.contact main .socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-left: 2%;
+  padding: 10px;
+}
+
+.contact main .icons a {
+  text-decoration: none;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.contact main .icons img {
+  top: auto;
+  width: 30px;
+  height: 30px;
+  filter: invert(100%);
+}
+
+.contact main .icons span {
+  margin-left: 2%;
+  font-size: 1.2rem;
+  top: auto;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.contact main .icons a:hover :is(img, span) {
+  color: var(--accent-bronze);
+  filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
+}
+
+.contact main .info table {
+  table-layout: fixed;
+  margin-left: 2%;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+.contact main .info th {
+  text-align: left;
+  color: var(--accent-bronze);
+}
+
+.contact main .info td {
+  padding: 10px;
+}
+
+.contact main .add-info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 2%;
+}
+
+.contact main .add-info h2 {
+  color: var(--accent-bronze);
+}
+
+.contact main .add-info p {
+  font-size: 1.1rem;
+}
+
+.contact main footer {
+  margin-top: 28%;
+  padding-bottom: 5%;
+}
+
+/* ----- Signup Page ----- */
+
+.signup {
+  background-image: url(assets/bg5.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.signup main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.signup main .info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
+.signup main .info-section .return {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  text-decoration: none;
+}
+
+.signup main .info-section .return a {
+  color: var(--text-primary);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.signup main .info-section .return img {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 35px;
+  width: 35px;
+  filter: invert(100%);
+}
+
+.signup main .info-section .return img:hover {
+  filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
+}
+
+.signup main .info-section header h1 {
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: 15px;
+  color: var(--accent-bronze);
+}
+
+.signup main .info-section header h4 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.signup main .info-section details {
+  width: 80%;
+}
+
+.signup main .info-section details summary {
+  text-align: center;
+}
+
+.signup main .info-section details summary:hover {
+  color: var(--accent-bronze);
+}
+
+.signup main .info-section details li {
+  list-style-type: "✓  ";
+  font-size: 1.1rem;
+  margin-top: 30px;
+}
+
+.signup main .info-section details li p {
+  margin: 0;
+  margin-top: 5px;
+}
+
+.signup main .signup-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  background-color: var(--bg-dark);
+}
+
+.signup main .signup-section .signin {
+  align-self: flex-start;
+  margin-left: 20px;
+  color: var(--text-primary);
+}
+
+.signup main .signup-section .signin a {
+  text-decoration: none;
+  color: var(--accent-bronze);
+}
+
+.signup main .signup-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin-top: 5%;
+  justify-content: center;
+}
+
+.signup main .signup-section form div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 6%;
+}
+
+.signup main .signup-section form label {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.signup main .signup-section form input {
+  width: 100%;
+  background-color: var(--bg-mid);
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--text-primary);
+  height: 30px;
+}
+
+.signup main .signup-section form .terms {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4%;
+}
+
+.signup main .signup-section form .terms label {
+  margin: auto 0;
+  margin-left: 2%;
+  font-size: 1.1rem;
+}
+
+.signup main .signup-section form .terms input {
+  scale: 100%;
+  width: 20px;
+}
+
+.signup main .signup-section form .submit input {
+  background-color: var(--accent-bronze);
+  color: var(--bg-darkest);
+  height: 45px;
+  font-size: 1.2rem;
+}
+
+/* ----- Account ----- */
+
+#googleSignInBtn {
+  all: unset;
+  width: 50%;
+  margin-top: 2%;
+}
+
+.account-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.account-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #2B2F38;
+}
+
+.user-menu {
+  position: relative;
+}
+
+.account-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  min-width: 160px;
+  z-index: 10;
+}
+
+.account-dropdown.open {
+  display: block;
+}
+
+.account-name {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+}
+
+.account-dropdown hr {
+  height: 1px;
+  border: none;
+  background-color: var(--border-color);
+}
+
+.account-dropdown #signout-btn {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+.account-dropdown #signout-btn:hover {
+  color: var(--accent-bronze);
+}
+</file>
+
 <file path="sections/store.html">
 <!DOCTYPE html>
 <html lang="en">
@@ -1638,9 +1768,9 @@ export default defineConfig({
             <a href="/contact">Contact</a>
         </nav>
 
-        <div class="account">
-            <a>
-                <img src="../src/assets/account.svg" alt="account">
+        <div class="account" id="header-account">
+            <a href="/signup">
+                <img src="../src/assets/account.svg" alt="account" class="account-icon">
             </a>
         </div>
 
@@ -1835,6 +1965,45 @@ export default defineConfig({
 
     </main>
 
+<script>
+function renderHeaderAuth() {
+    const stored = localStorage.getItem('paalam_user');
+    const container = document.getElementById('header-account');
+
+    if (stored) {
+        const user = JSON.parse(stored);
+        container.classList.add('signed-in');
+
+        const avatarClass = user.isDefaultIcon
+            ? 'account-avatar account-avatar-default'
+            : 'account-avatar';
+
+        container.innerHTML = `
+            <div class="user-menu">
+                <button id="account-toggle" class="account-toggle">
+                    <img src="${user.picture}" alt="${user.name}" class="${avatarClass}">
+                </button>
+                <div class="account-dropdown" id="account-dropdown">
+                    <p class="account-name">${user.name}</p>
+                    <button id="signout-btn">Sign out</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('account-toggle').addEventListener('click', () => {
+            document.getElementById('account-dropdown').classList.toggle('open');
+        });
+
+        document.getElementById('signout-btn').addEventListener('click', () => {
+            localStorage.removeItem('paalam_user');
+            window.location.href = '/home';
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', renderHeaderAuth);
+</script>
+
 </body>
 </html>
 </file>
@@ -1866,9 +2035,9 @@ export default defineConfig({
             <a href="/contact">Contact</a>
         </nav>
 
-        <div class="account">
+        <div class="account" id="header-account">
             <a href="/signup">
-                <img src="../src/assets/account.svg" alt="account">
+                <img src="../src/assets/account.svg" alt="account" class="account-icon">
             </a>
         </div>
 
@@ -2031,6 +2200,47 @@ export default defineConfig({
         </footer>
 
     </main>
+
+
+<script>
+function renderHeaderAuth() {
+    const stored = localStorage.getItem('paalam_user');
+    const container = document.getElementById('header-account');
+
+    if (stored) {
+        const user = JSON.parse(stored);
+        container.classList.add('signed-in');
+
+        const avatarClass = user.isDefaultIcon
+            ? 'account-avatar account-avatar-default'
+            : 'account-avatar';
+
+        container.innerHTML = `
+            <div class="user-menu">
+                <button id="account-toggle" class="account-toggle">
+                    <img src="${user.picture}" alt="${user.name}" class="${avatarClass}">
+                </button>
+                <div class="account-dropdown" id="account-dropdown">
+                    <p class="account-name">${user.name}</p>
+                    <button id="signout-btn">Sign out</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('account-toggle').addEventListener('click', () => {
+            document.getElementById('account-dropdown').classList.toggle('open');
+        });
+
+        document.getElementById('signout-btn').addEventListener('click', () => {
+            localStorage.removeItem('paalam_user');
+            window.location.href = '/home';
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', renderHeaderAuth);
+</script>
+
 </body>
 </html>
 </file>
@@ -2062,9 +2272,9 @@ export default defineConfig({
             <a>Contact</a>
         </nav>
         
-        <div class="account">
-            <a>
-                <img src="../src/assets/account.svg" alt="account">
+        <div class="account" id="header-account">
+            <a href="/signup">
+                <img src="../src/assets/account.svg" alt="account" class="account-icon">
             </a>
         </div>
 
@@ -2250,6 +2460,45 @@ export default defineConfig({
         </footer>
 
     </main>
+
+<script>
+function renderHeaderAuth() {
+    const stored = localStorage.getItem('paalam_user');
+    const container = document.getElementById('header-account');
+
+    if (stored) {
+        const user = JSON.parse(stored);
+        container.classList.add('signed-in');
+
+        const avatarClass = user.isDefaultIcon
+            ? 'account-avatar account-avatar-default'
+            : 'account-avatar';
+
+        container.innerHTML = `
+            <div class="user-menu">
+                <button id="account-toggle" class="account-toggle">
+                    <img src="${user.picture}" alt="${user.name}" class="${avatarClass}">
+                </button>
+                <div class="account-dropdown" id="account-dropdown">
+                    <p class="account-name">${user.name}</p>
+                    <button id="signout-btn">Sign out</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('account-toggle').addEventListener('click', () => {
+            document.getElementById('account-dropdown').classList.toggle('open');
+        });
+
+        document.getElementById('signout-btn').addEventListener('click', () => {
+            localStorage.removeItem('paalam_user');
+            window.location.href = '/home';
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', renderHeaderAuth);
+</script>
 </body>
 </html>
 </file>
@@ -2307,7 +2556,7 @@ export default defineConfig({
                 </section>
                 
                 <section class="enter-site-btn">
-                    <a href="/home">Enter Site</a>
+                    <a href="/signup">Enter Site</a>
                 </section>
 
         </section>

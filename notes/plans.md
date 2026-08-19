@@ -1,0 +1,2 @@
+- About section (More on about me the developer)
+- Signin section (small box in the middle refer to githubs)

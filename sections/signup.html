@@ -13,19 +13,19 @@
     <main>
 
         <section class="info-section">
-            <div class="return">
-                <a href="/home" title="Go back">
+            <span class="return">
+                <a href="/home" title="Go to Home">
                     <img src="../src/assets/arrow-left.svg">
                 </a>
-            </div>
+            </span>
 
             <header>
                 <h1>Create your account</h1>   
                 <h4>Every arrangement, remembered with care.</h4>
             </header>
 
-            <details>
-                <summary>Click to see account benefits</summary>
+            <details open>
+                <summary>Account benefits</summary>
 
                 <ul>
                     <li>
@@ -68,35 +68,35 @@
             
             <div id="googleSignInBtn"></div>
 
-            <form>
+            <form id="signup-form">
 
                 <div>
-                    <label>Full Name</label>
-                    <input type="text">
+                    <label>Name</label>
+                    <input type="text" id="signup-name" required>
                 </div>
 
                 <div>
                     <label>Email</label>
-                    <input type="email">
+                    <input type="email" id="signup-email" required>
                 </div>
 
                 <div>
                     <label>Phone</label>
-                    <input type="tel">
+                    <input type="tel" id="signup-phone" required>
                 </div>
 
                 <div>
                     <label>Password</label>
-                    <input type="password">
+                    <input type="password" id="signup-password" required>
                 </div>
 
                 <div>
                     <label>Confirm Password</label>
-                    <input type="password">
+                    <input type="password" id="signup-confirm-password" required>
                 </div>
 
                 <div class="terms">
-                    <input type="checkbox">
+                    <input type="checkbox" required>
                     <label>I agree to the Terms & Privacy Policy</label>
                 </div>
 
@@ -111,7 +111,15 @@
 <script>
 function handleCredentialResponse(response) {
     const data = parseJwt(response.credential);
-    window.setGoogleUser(data); // Your existing function
+    
+    const user = {
+        name: data.name,
+        email: data.email,
+        picture: data.picture
+    };
+    
+    localStorage.setItem('paalam_user', JSON.stringify(user));
+    window.location.href = '/home';
 }
 
 function parseJwt(token) {
@@ -125,7 +133,7 @@ function parseJwt(token) {
 
 window.onload = function () {
     google.accounts.id.initialize({
-    client_id: "1039434473386-fm6bjua9mmpb6umhf6lur1klb806urce.apps.googleusercontent.com",
+    client_id: "957269107783-bmmvsgrgfm115gb986hd4mvvdtfc9gr9.apps.googleusercontent.com",
     callback: handleCredentialResponse
     });
 
@@ -135,6 +143,30 @@ window.onload = function () {
     { theme: "filled_black", size: "large" } // customization options
     );
 }
+</script>
+
+<script>
+    document.getElementById('signup-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const password = document.getElementById('signup-password').value;
+        const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return;
+        }
+
+        const user = {
+            name: document.getElementById('signup-name').value,
+            email: document.getElementById('signup-email').value,
+            picture: '../src/assets/account.svg', // fallback since there's no photo from a form
+            isDefaultIcon: true // add this
+        };
+
+        localStorage.setItem('paalam_user', JSON.stringify(user));
+        window.location.href = '/home';
+    });
 </script>
 
 </body>

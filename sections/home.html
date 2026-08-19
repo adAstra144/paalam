@@ -24,9 +24,9 @@
             <a href="/contact">Contact</a>
         </nav>
 
-        <div class="account">
+        <div class="account" id="header-account">
             <a href="/signup">
-                <img src="../src/assets/account.svg" alt="account">
+                <img src="../src/assets/account.svg" alt="account" class="account-icon">
             </a>
         </div>
 
@@ -189,5 +189,46 @@
         </footer>
 
     </main>
+
+
+<script>
+function renderHeaderAuth() {
+    const stored = localStorage.getItem('paalam_user');
+    const container = document.getElementById('header-account');
+
+    if (stored) {
+        const user = JSON.parse(stored);
+        container.classList.add('signed-in');
+
+        const avatarClass = user.isDefaultIcon
+            ? 'account-avatar account-avatar-default'
+            : 'account-avatar';
+
+        container.innerHTML = `
+            <div class="user-menu">
+                <button id="account-toggle" class="account-toggle">
+                    <img src="${user.picture}" alt="${user.name}" class="${avatarClass}">
+                </button>
+                <div class="account-dropdown" id="account-dropdown">
+                    <p class="account-name">${user.name}</p>
+                    <button id="signout-btn">Sign out</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('account-toggle').addEventListener('click', () => {
+            document.getElementById('account-dropdown').classList.toggle('open');
+        });
+
+        document.getElementById('signout-btn').addEventListener('click', () => {
+            localStorage.removeItem('paalam_user');
+            window.location.href = '/home';
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', renderHeaderAuth);
+</script>
+
 </body>
 </html>
