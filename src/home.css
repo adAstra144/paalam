@@ -19,13 +19,11 @@
   margin-bottom: 1%;
   font-weight: 10;
   color: var(--accent-bronze);
-  animation: fadeInDown .6s ease-out forwards;
 }
 
 .home main .our-services .box {
   border-radius: 10px;
   padding-bottom: 2%;
-  animation: fadeInDown .4s ease-out forwards;
 }
 
 .home main .our-services {

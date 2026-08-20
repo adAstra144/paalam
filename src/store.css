@@ -23,7 +23,6 @@
   margin-bottom: 20px;
   font-weight: 10;
   color: var(--accent-bronze);
-  animation: fadeInDown .6s ease-out forwards;
 }
 
 .store main .product-grid1 {
@@ -37,7 +36,6 @@
   padding: 32px;
   margin-top: 2%;
   max-width: 1000px;
-  animation: fadeInDown .4s ease-out forwards;
 }
 
 .store main .product-grid2 {
@@ -51,7 +49,6 @@
   padding: 32px;
   margin-top: 5%;
   max-width: 1000px;
-  animation: fadeInDown .2s ease-out forwards;
 }
 
 .store main .product-grid3 {
@@ -66,7 +63,6 @@
   margin-top: 5%;
   margin-bottom: 10%;
   max-width: 1000px;
-  animation: fadeInDown .1s ease-out forwards;
 }
 
 .store main .product-card {

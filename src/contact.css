@@ -15,9 +15,8 @@
 }
 
 .contact main .tagline {
-  margin-top: 20px;
+  margin-top: 2%;
   color: var(--accent-bronze);
-  animation: fadeInDown .6s ease-out forwards;
 }
 
 .contact main .info {
@@ -30,8 +29,9 @@
 .contact main .box {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
-  animation: fadeInDown .4s ease-out forwards;
+  width: 70%;
+  padding: 25px;
+  margin-top: 1%;
 }
 
 .contact main .info-header {
@@ -51,26 +51,27 @@
   text-decoration: none;
   color: var(--text-primary);
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
 .contact main .icons img {
   top: auto;
   width: 30px;
   height: 30px;
-  filter: invert(100%);
 }
 
 .contact main .icons span {
-  margin-left: 2%;
   font-size: 1.2rem;
-  top: auto;
   color: var(--text-primary);
   cursor: pointer;
 }
 
-.contact main .icons a:hover :is(img, span) {
+.contact main .icons a span:hover {
   color: var(--accent-bronze);
-  filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
 }
 
 .contact main .info table {
@@ -98,6 +99,7 @@
 
 .contact main .add-info h2 {
   color: var(--accent-bronze);
+  margin-bottom: 0;
 }
 
 .contact main .add-info p {
