@@ -27,7 +27,7 @@
         
         <div class="account" id="header-account">
             <a href="/signup">
-                <img src="../src/assets/account.svg" alt="account" class="account-icon">
+                <img src="/account.svg" alt="account" class="account-icon">
             </a>
         </div>
 
@@ -227,10 +227,12 @@ function renderHeaderAuth() {
             ? 'account-avatar account-avatar-default'
             : 'account-avatar';
 
+        const avatarAlt = user.isDefaultIcon ? 'Account' : user.name;
+
         container.innerHTML = `
             <div class="user-menu">
                 <button id="account-toggle" class="account-toggle">
-                    <img src="${user.picture}" alt="${user.name}" class="${avatarClass}">
+                    <img src="${user.picture}" alt="${avatarAlt}" class="${avatarClass}">
                 </button>
                 <div class="account-dropdown" id="account-dropdown">
                     <p class="account-name">${user.name}</p>

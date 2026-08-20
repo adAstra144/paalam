@@ -1,0 +1,92 @@
+.signin {
+    background-image: url('assets/bg5.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.signin main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signin main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-dark);
+    width: 30%;
+    height: 65%;
+    margin-top: 7%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.signin main .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.signin main .top img {
+    width: 80px;
+    height: 80px;
+}
+
+.signin main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.signin main form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70%;
+    margin-top: 5%;
+}
+
+.signin main form label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.signin main form input {
+    width: 100%;
+    background-color: var(--bg-mid);
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-primary);
+    height: 30px;
+}
+
+.signin main form .submit input {
+    background-color: var(--accent-bronze);
+    color: var(--bg-darkest);
+    height: 45px;
+    font-size: 1.2rem;
+    margin-bottom: 4%;
+}
+
+.signin main .separator {
+    width: 65%;
+}
+
+.signin main #googleSignInBtn {
+    width: 340px;
+    margin-top: 4%;
+}
+
+.signin main .bottom {
+    margin-top: 3%;
+    font-size: 0.9rem;
+}
+
+.signin main .bottom a {
+    text-decoration: underline;
+    color: var(--accent-bronze);
+}
