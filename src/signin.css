@@ -64,6 +64,12 @@
     height: 45px;
     font-size: 1.2rem;
     margin-bottom: 4%;
+    cursor: pointer;
+}
+
+.signin main form .submit input:hover {
+    background-color: var(--accent-maroon);
+    color: var(--text-primary);
 }
 
 .signin main .separator {
@@ -83,4 +89,8 @@
 .signin main .bottom a {
     text-decoration: underline;
     color: var(--accent-bronze);
+}
+
+.signin main .bottom a:hover {
+    color: var(--accent-maroon);
 }

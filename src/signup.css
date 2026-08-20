@@ -102,26 +102,9 @@
   color: var(--accent-bronze);
 }
 
-/* .signup main .signup-section .skip {
-    margin-right: 2%;
+.signup main .signup-section .signin a:hover {
+  color: var(--accent-maroon);
 }
-
-.signup main .signup-section .skip a {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-primary);
-}
-
-.signup main .signup-section .skip img {
-    height: 40px;
-    width: 40px;
-    filter: invert(100%);
-}
-
-.signup main .signup-section .skip img:hover {
-    filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
-} */
 
 .signup main .signup-section h1 {
   margin-bottom: 5%;
@@ -180,6 +163,12 @@
   color: var(--bg-darkest);
   height: 45px;
   font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.signup main .signup-section form .submit input:hover {
+  background-color: var(--accent-maroon);
+  color: var(--text-primary);
 }
 
 .signup main .signup-section h5 {
@@ -191,4 +180,8 @@
 .signup main .signup-section h5 a {
   text-decoration: underline;
   color: var(--accent-bronze);
+}
+
+.signup main .signup-section h5 a:hover {
+  color: var(--accent-maroon);
 }
