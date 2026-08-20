@@ -42,11 +42,11 @@ The content is organized as follows:
 <directory_structure>
 notes/
   color-scheme.md
-  plans.md
 public/
   account.svg
   favicon.svg
 sections/
+  about.html
   contact.html
   home.html
   signin.html
@@ -61,15 +61,20 @@ src/
     bg3.png
     bg4.png
     bg5.png
+    bg6.png
     email.svg
     facebook.svg
+    github.svg
     instagram.svg
     item-1.png
     item-2.png
     item-3.png
     item-4.png
     item-5.png
+    pfp.jpg
     phone.svg
+    phone1.svg
+  about.css
   contact.css
   home.css
   index.css
@@ -86,108 +91,6 @@ vite.config.js
 
 <files>
 This section contains the contents of the repository's files.
-
-<file path="public/account.svg">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-</svg>
-</file>
-
-<file path="src/signin.css">
-.signin {
-    background-image: url('assets/bg5.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.signin main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.signin main .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--bg-dark);
-    width: 30%;
-    height: 65%;
-    margin-top: 7%;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.signin main .top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 5%;
-}
-
-.signin main .top img {
-    width: 80px;
-    height: 80px;
-}
-
-.signin main form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.signin main form div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 70%;
-    margin-top: 5%;
-}
-
-.signin main form label {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-}
-
-.signin main form input {
-    width: 100%;
-    background-color: var(--bg-mid);
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
-    color: var(--text-primary);
-    height: 30px;
-}
-
-.signin main form .submit input {
-    background-color: var(--accent-bronze);
-    color: var(--bg-darkest);
-    height: 45px;
-    font-size: 1.2rem;
-    margin-bottom: 4%;
-}
-
-.signin main .separator {
-    width: 65%;
-}
-
-.signin main #googleSignInBtn {
-    width: 340px;
-    margin-top: 4%;
-}
-
-.signin main .bottom {
-    margin-top: 3%;
-    font-size: 0.9rem;
-}
-
-.signin main .bottom a {
-    text-decoration: underline;
-    color: var(--accent-bronze);
-}
-</file>
 
 <file path="notes/color-scheme.md">
 "Quiet Mourning v2"
@@ -220,9 +123,11 @@ Hover/active state:
 #C4A57A (lighter bronze, for buttons/links on hover)
 </file>
 
-<file path="notes/plans.md">
-- About section (More on about me the developer)
-- Signin section (small box in the middle refer to githubs)
+<file path="public/account.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>
 </file>
 
 <file path="public/favicon.svg">
@@ -331,205 +236,18 @@ Hover/active state:
 </svg>
 </file>
 
-<file path="src/assets/email.svg">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-</svg>
+<file path="src/assets/github.svg">
+<svg viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(64)" fill="#ffff"/></svg>
 </file>
 
-<file path="src/assets/facebook.svg">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-</svg>
-</file>
-
-<file path="src/assets/instagram.svg">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-</svg>
-</file>
-
-<file path="src/assets/phone.svg">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-  <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
-</svg>
-</file>
-
-<file path="src/contact.css">
-.contact {
-  background: url('assets/bg4.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.contact header .nav-links a:nth-of-type(3) {
-  color: var(--accent-bronze) !important;
-}
-
-.contact main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contact main .tagline {
-  margin-top: 20px;
-  color: var(--accent-bronze);
-  animation: fadeInDown .6s ease-out forwards;
-}
-
-.contact main .info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-}
-
-.contact main .box {
-  display: flex;
-  flex-wrap: wrap;
-  width: 90%;
-  animation: fadeInDown .4s ease-out forwards;
-}
-
-.contact main .info-header {
-  margin-left: 2%;
-  color: var(--accent-bronze);
-}
-
-.contact main .socials {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  margin-left: 2%;
-  padding: 10px;
-}
-
-.contact main .icons a {
-  text-decoration: none;
-  color: var(--text-primary);
-  cursor: pointer;
-}
-
-.contact main .icons img {
-  top: auto;
-  width: 30px;
-  height: 30px;
-  filter: invert(100%);
-}
-
-.contact main .icons span {
-  margin-left: 2%;
-  font-size: 1.2rem;
-  top: auto;
-  color: var(--text-primary);
-  cursor: pointer;
-}
-
-.contact main .icons a:hover :is(img, span) {
-  color: var(--accent-bronze);
-  filter: brightness(0) saturate(100%) invert(56%) sepia(35%) saturate(542%) hue-rotate(345deg) brightness(94%) contrast(89%);
-}
-
-.contact main .info table {
-  table-layout: fixed;
-  margin-left: 2%;
-  border-collapse: collapse;
-  width: 60%;
-}
-
-.contact main .info th {
-  text-align: left;
-  color: var(--accent-bronze);
-}
-
-.contact main .info td {
-  padding: 10px;
-}
-
-.contact main .add-info {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin-left: 2%;
-}
-
-.contact main .add-info h2 {
-  color: var(--accent-bronze);
-}
-
-.contact main .add-info p {
-  font-size: 1.1rem;
-}
-
-.contact main footer {
-  margin-top: 28%;
-  padding-bottom: 5%;
-}
-</file>
-
-<file path="src/home.css">
-.home {
-  background-image: url('assets/bg2.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.home header .nav-links a:first-of-type {
-  color: var(--accent-bronze) !important;
-}
-
-.home main {
-  height: 100vh;
-}
-
-.home main .tagline {
-  display: flex;
-  justify-content: center;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  font-weight: 10;
-  color: var(--accent-bronze);
-  animation: fadeInDown .6s ease-out forwards;
-}
-
-.home main .our-services .box {
-  border-radius: 10px;
-  padding-bottom: 2%;
-  animation: fadeInDown .4s ease-out forwards;
-}
-
-.home main .our-services {
-  display: flex;
-  justify-content: center;
-}
-
-.home main .our-services h2 {
-  display: flex;
-  margin-left: 2%;
-  color: var(--accent-bronze);
-}
-
-.home main .our-services h3 {
-  margin-top: 5%;
-}
-
-.home main .our-services .first {
-  margin-top: 0px;
-}
-
-.home main .our-services li {
-  margin-left: 3%;
-  color: var(--text-primary);
-}
-
-.home main .space {
-  padding-bottom: 10%;
-}
-
-.home main footer {
-  height: 40vh;
-}
+<file path="src/assets/phone1.svg">
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Phone" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#20df40"/><path fill="#ffffff" d="M395 338c-10-9-22-17-33-23-23-16-43-17-59 6-10 14-23 16-37 10-39-18-68-43-84-82-8-16-8-31 10-42 9-6 19-14 18-28-1-18-44-78-62-84-8-2-14-2-22 0-41 14-57 46-42 85a451 451 0 0 0 251 248l17 5c26 0 57-25 67-50 9-24-10-34-24-45z"/><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="17" d="M268 138s41-1 72 30c31 30 27 74 27 74m-87-63s18-2 33 14c15 15 13 34 13 34M255 98s64-3 111 44c47 48 43 114 43 114"/></svg>
 </file>
 
 <file path="src/index.css">
@@ -961,12 +679,734 @@ template {
 }
 </file>
 
+<file path="src/signin.css">
+.signin {
+    background-image: url('assets/bg5.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.signin main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signin main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-dark);
+    width: 30%;
+    height: 65%;
+    margin-top: 7%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.signin main .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.signin main .top img {
+    width: 80px;
+    height: 80px;
+}
+
+.signin main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.signin main form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70%;
+    margin-top: 5%;
+}
+
+.signin main form label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.signin main form input {
+    width: 100%;
+    background-color: var(--bg-mid);
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-primary);
+    height: 30px;
+}
+
+.signin main form .submit input {
+    background-color: var(--accent-bronze);
+    color: var(--bg-darkest);
+    height: 45px;
+    font-size: 1.2rem;
+    margin-bottom: 4%;
+}
+
+.signin main .separator {
+    width: 65%;
+}
+
+.signin main #googleSignInBtn {
+    width: 340px;
+    margin-top: 4%;
+}
+
+.signin main .bottom {
+    margin-top: 3%;
+    font-size: 0.9rem;
+}
+
+.signin main .bottom a {
+    text-decoration: underline;
+    color: var(--accent-bronze);
+}
+</file>
+
+<file path="package.json">
+{
+  "name": "testing-1",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.2.0"
+  }
+}
+</file>
+
+<file path="src/assets/email.svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 49.4 512 399.42"><g fill="none" fill-rule="evenodd"><g fill-rule="nonzero"><path fill="#4285f4" d="M34.91 448.818h81.454V251L0 163.727V413.91c0 19.287 15.622 34.91 34.91 34.91z"/><path fill="#34a853" d="M395.636 448.818h81.455c19.287 0 34.909-15.622 34.909-34.909V163.727L395.636 251z"/><path fill="#fbbc04" d="M395.636 99.727V251L512 163.727v-46.545c0-43.142-49.25-67.782-83.782-41.891z"/></g><path fill="#ea4335" d="M116.364 251V99.727L256 204.455 395.636 99.727V251L256 355.727z"/><path fill="#c5221f" fill-rule="nonzero" d="M0 117.182v46.545L116.364 251V99.727L83.782 75.291C49.25 49.4 0 74.04 0 117.18z"/></g></svg>
+</file>
+
+<file path="src/assets/facebook.svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 666.667 666.667"><defs><clipPath id="facebook_icon__a" clipPathUnits="userSpaceOnUse"><path d="M0 700h700V0H0Z"/></clipPath></defs><g clip-path="url(#facebook_icon__a)" transform="matrix(1.33333 0 0 -1.33333 -133.333 800)"><path d="M0 0c0 138.071-111.929 250-250 250S-500 138.071-500 0c0-117.245 80.715-215.622 189.606-242.638v166.242h-51.552V0h51.552v32.919c0 85.092 38.508 124.532 122.048 124.532 15.838 0 43.167-3.105 54.347-6.211V81.986c-5.901.621-16.149.932-28.882.932-40.993 0-56.832-15.528-56.832-55.9V0h81.659l-14.028-76.396h-67.631v-171.773C-95.927-233.218 0-127.818 0 0" style="fill:#0866ff;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(600 350)"/><path d="m0 0 14.029 76.396H-67.63v27.019c0 40.372 15.838 55.899 56.831 55.899 12.733 0 22.981-.31 28.882-.931v69.253c-11.18 3.106-38.509 6.212-54.347 6.212-83.539 0-122.048-39.441-122.048-124.533V76.396h-51.552V0h51.552v-166.242a250.559 250.559 0 0 1 60.394-7.362c10.254 0 20.358.632 30.288 1.831V0Z" style="fill:#fff;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(447.918 273.604)"/></g></svg>
+</file>
+
+<file path="src/assets/instagram.svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 264.583 264.583"><defs><radialGradient xlink:href="#instagram_icon__a" id="instagram_icon__f" cx="158.429" cy="578.088" r="52.352" fx="158.429" fy="578.088" gradientTransform="matrix(0 -4.03418 4.28018 0 -2332.227 942.236)" gradientUnits="userSpaceOnUse"/><radialGradient xlink:href="#instagram_icon__b" id="instagram_icon__g" cx="172.615" cy="600.692" r="65" fx="172.615" fy="600.692" gradientTransform="matrix(.67441 -1.16203 1.51283 .87801 -814.366 -47.835)" gradientUnits="userSpaceOnUse"/><radialGradient xlink:href="#instagram_icon__c" id="instagram_icon__h" cx="144.012" cy="51.337" r="67.081" fx="144.012" fy="51.337" gradientTransform="matrix(-2.3989 .67549 -.23008 -.81732 464.996 -26.404)" gradientUnits="userSpaceOnUse"/><radialGradient xlink:href="#instagram_icon__d" id="instagram_icon__e" cx="199.788" cy="628.438" r="52.352" fx="199.788" fy="628.438" gradientTransform="matrix(-3.10797 .87652 -.6315 -2.23914 1345.65 1374.198)" gradientUnits="userSpaceOnUse"/><linearGradient id="instagram_icon__d"><stop offset="0" stop-color="#ff005f"/><stop offset="1" stop-color="#fc01d8"/></linearGradient><linearGradient id="instagram_icon__c"><stop offset="0" stop-color="#780cff"/><stop offset="1" stop-color="#820bff" stop-opacity="0"/></linearGradient><linearGradient id="instagram_icon__b"><stop offset="0" stop-color="#fc0"/><stop offset="1" stop-color="#fc0" stop-opacity="0"/></linearGradient><linearGradient id="instagram_icon__a"><stop offset="0" stop-color="#fc0"/><stop offset=".124" stop-color="#fc0"/><stop offset=".567" stop-color="#fe4a05"/><stop offset=".694" stop-color="#ff0f3f"/><stop offset="1" stop-color="#fe0657" stop-opacity="0"/></linearGradient></defs><path fill="url(#instagram_icon__e)" d="M204.15 18.143c-55.23 0-71.383.057-74.523.317-11.334.943-18.387 2.728-26.07 6.554-5.922 2.942-10.592 6.351-15.201 11.13-8.394 8.716-13.481 19.439-15.323 32.184-.895 6.188-1.156 7.45-1.209 39.056-.02 10.536 0 24.4 0 42.999 0 55.2.062 71.341.326 74.476.916 11.032 2.645 17.973 6.308 25.565 7 14.533 20.37 25.443 36.12 29.514 5.453 1.404 11.476 2.178 19.208 2.544 3.277.142 36.669.244 70.081.244 33.413 0 66.826-.04 70.02-.203 8.954-.422 14.153-1.12 19.901-2.606 15.852-4.09 28.977-14.838 36.12-29.575 3.591-7.409 5.412-14.614 6.236-25.07.18-2.28.255-38.626.255-74.924 0-36.304-.082-72.583-.26-74.863-.835-10.625-2.656-17.77-6.364-25.32-3.042-6.182-6.42-10.799-11.324-15.519-8.752-8.361-19.455-13.45-32.21-15.29-6.18-.894-7.41-1.158-39.033-1.213z" transform="translate(-71.816 -18.143)"/><path fill="url(#instagram_icon__f)" d="M204.15 18.143c-55.23 0-71.383.057-74.523.317-11.334.943-18.387 2.728-26.07 6.554-5.922 2.942-10.592 6.351-15.201 11.13-8.394 8.716-13.481 19.439-15.323 32.184-.895 6.188-1.156 7.45-1.209 39.056-.02 10.536 0 24.4 0 42.999 0 55.2.062 71.341.326 74.476.916 11.032 2.645 17.973 6.308 25.565 7 14.533 20.37 25.443 36.12 29.514 5.453 1.404 11.476 2.178 19.208 2.544 3.277.142 36.669.244 70.081.244 33.413 0 66.826-.04 70.02-.203 8.954-.422 14.153-1.12 19.901-2.606 15.852-4.09 28.977-14.838 36.12-29.575 3.591-7.409 5.412-14.614 6.236-25.07.18-2.28.255-38.626.255-74.924 0-36.304-.082-72.583-.26-74.863-.835-10.625-2.656-17.77-6.364-25.32-3.042-6.182-6.42-10.799-11.324-15.519-8.752-8.361-19.455-13.45-32.21-15.29-6.18-.894-7.41-1.158-39.033-1.213z" transform="translate(-71.816 -18.143)"/><path fill="url(#instagram_icon__g)" d="M204.15 18.143c-55.23 0-71.383.057-74.523.317-11.334.943-18.387 2.728-26.07 6.554-5.922 2.942-10.592 6.351-15.201 11.13-8.394 8.716-13.481 19.439-15.323 32.184-.895 6.188-1.156 7.45-1.209 39.056-.02 10.536 0 24.4 0 42.999 0 55.2.062 71.341.326 74.476.916 11.032 2.645 17.973 6.308 25.565 7 14.533 20.37 25.443 36.12 29.514 5.453 1.404 11.476 2.178 19.208 2.544 3.277.142 36.669.244 70.081.244 33.413 0 66.826-.04 70.02-.203 8.954-.422 14.153-1.12 19.901-2.606 15.852-4.09 28.977-14.838 36.12-29.575 3.591-7.409 5.412-14.614 6.236-25.07.18-2.28.255-38.626.255-74.924 0-36.304-.082-72.583-.26-74.863-.835-10.625-2.656-17.77-6.364-25.32-3.042-6.182-6.42-10.799-11.324-15.519-8.752-8.361-19.455-13.45-32.21-15.29-6.18-.894-7.41-1.158-39.033-1.213z" transform="translate(-71.816 -18.143)"/><path fill="url(#instagram_icon__h)" d="M204.15 18.143c-55.23 0-71.383.057-74.523.317-11.334.943-18.387 2.728-26.07 6.554-5.922 2.942-10.592 6.351-15.201 11.13-8.394 8.716-13.481 19.439-15.323 32.184-.895 6.188-1.156 7.45-1.209 39.056-.02 10.536 0 24.4 0 42.999 0 55.2.062 71.341.326 74.476.916 11.032 2.645 17.973 6.308 25.565 7 14.533 20.37 25.443 36.12 29.514 5.453 1.404 11.476 2.178 19.208 2.544 3.277.142 36.669.244 70.081.244 33.413 0 66.826-.04 70.02-.203 8.954-.422 14.153-1.12 19.901-2.606 15.852-4.09 28.977-14.838 36.12-29.575 3.591-7.409 5.412-14.614 6.236-25.07.18-2.28.255-38.626.255-74.924 0-36.304-.082-72.583-.26-74.863-.835-10.625-2.656-17.77-6.364-25.32-3.042-6.182-6.42-10.799-11.324-15.519-8.752-8.361-19.455-13.45-32.21-15.29-6.18-.894-7.41-1.158-39.033-1.213z" transform="translate(-71.816 -18.143)"/><path fill="#fff" d="M132.345 33.973c-26.716 0-30.07.117-40.563.594-10.472.48-17.62 2.136-23.876 4.567-6.47 2.51-11.958 5.87-17.426 11.335-5.472 5.464-8.834 10.948-11.354 17.412-2.44 6.252-4.1 13.397-4.57 23.858-.47 10.486-.593 13.838-.593 40.535 0 26.697.119 30.037.594 40.522.482 10.465 2.14 17.609 4.57 23.859 2.515 6.465 5.876 11.95 11.346 17.414 5.466 5.468 10.955 8.834 17.42 11.345 6.26 2.431 13.41 4.088 23.881 4.567 10.493.477 13.844.594 40.559.594 26.719 0 30.061-.117 40.555-.594 10.472-.48 17.63-2.136 23.888-4.567 6.468-2.51 11.948-5.877 17.414-11.345 5.472-5.464 8.834-10.949 11.354-17.412 2.419-6.252 4.079-13.398 4.57-23.858.472-10.486.595-13.828.595-40.525s-.123-30.047-.594-40.533c-.492-10.465-2.152-17.608-4.57-23.858-2.521-6.466-5.883-11.95-11.355-17.414-5.472-5.468-10.944-8.827-17.42-11.335-6.271-2.431-13.424-4.088-23.897-4.567-10.493-.477-13.834-.594-40.558-.594zm-8.825 17.715c2.62-.004 5.542 0 8.825 0 26.266 0 29.38.094 39.752.565 9.591.438 14.797 2.04 18.264 3.385 4.591 1.782 7.864 3.912 11.305 7.352 3.443 3.44 5.575 6.717 7.362 11.305 1.346 3.46 2.951 8.663 3.388 18.247.47 10.363.573 13.475.573 39.71 0 26.233-.102 29.346-.573 39.709-.44 9.584-2.042 14.786-3.388 18.247-1.783 4.587-3.919 7.854-7.362 11.292-3.443 3.441-6.712 5.57-11.305 7.352-3.463 1.352-8.673 2.95-18.264 3.388-10.37.47-13.486.573-39.752.573-26.268 0-29.38-.102-39.751-.573-9.592-.443-14.797-2.044-18.267-3.39-4.59-1.781-7.87-3.911-11.313-7.352-3.443-3.44-5.574-6.709-7.362-11.298-1.346-3.461-2.95-8.663-3.387-18.247-.472-10.363-.566-13.476-.566-39.726s.094-29.347.566-39.71c.438-9.584 2.04-14.786 3.387-18.25 1.783-4.588 3.919-7.865 7.362-11.305 3.443-3.441 6.722-5.57 11.313-7.357 3.468-1.351 8.675-2.949 18.267-3.389 9.075-.41 12.592-.532 30.926-.553zm61.337 16.322c-6.518 0-11.805 5.277-11.805 11.792 0 6.512 5.287 11.796 11.805 11.796 6.517 0 11.804-5.284 11.804-11.796 0-6.513-5.287-11.796-11.805-11.796zm-52.512 13.782c-27.9 0-50.519 22.603-50.519 50.482 0 27.879 22.62 50.471 50.52 50.471s50.51-22.592 50.51-50.471c0-27.879-22.613-50.482-50.513-50.482zm0 17.715c18.11 0 32.792 14.67 32.792 32.767 0 18.096-14.683 32.767-32.792 32.767-18.11 0-32.791-14.671-32.791-32.767 0-18.098 14.68-32.767 32.791-32.767z"/></svg>
+</file>
+
+<file path="src/assets/phone.svg">
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 -1 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.02744 7.27271C0.848395 10.3893 1.41536 13.4881 2.67269 16.5692C3.93002 19.6502 5.7667 22.3988 8.18273 24.8148C10.5988 27.2308 13.3473 29.0675 16.4283 30.3248C19.5095 31.5822 22.6082 32.1318 25.7249 31.9734L25.6129 24.9352C20.9073 24.9352 16.8907 23.2715 13.5633 19.9441C10.236 16.6167 8.57225 12.6002 8.57225 7.89457L1.02744 7.27271Z" fill="url(#paint0_linear_103_1456)"/>
+<path d="M25.7298 31.9999C29.7464 31.9999 33.0025 28.7438 33.0025 24.7272C33.0025 20.7106 29.7464 17.4545 25.7298 17.4545C21.7131 17.4545 18.457 20.7106 18.457 24.7272C18.457 28.7438 21.7131 31.9999 25.7298 31.9999Z" fill="url(#paint1_radial_103_1456)"/>
+<path d="M8.27468 14.5455C12.2913 14.5455 15.5474 11.2893 15.5474 7.27273C15.5474 3.25611 12.2913 0 8.27468 0C4.25806 0 1.00195 3.25611 1.00195 7.27273C1.00195 11.2893 4.25806 14.5455 8.27468 14.5455Z" fill="url(#paint2_radial_103_1456)"/>
+<defs>
+<linearGradient id="paint0_linear_103_1456" x1="13.36" y1="7.27271" x2="13.36" y2="31.9999" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00EE7A"/>
+<stop offset="1" stop-color="#00C853"/>
+</linearGradient>
+<radialGradient id="paint1_radial_103_1456" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(23.4074 20.6087) rotate(78.4769) scale(11.6255)">
+<stop stop-color="#00EE7A"/>
+<stop offset="1" stop-color="#00C853"/>
+</radialGradient>
+<radialGradient id="paint2_radial_103_1456" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(5.95233 3.15425) rotate(78.4769) scale(11.6255)">
+<stop stop-color="#00EE7A"/>
+<stop offset="1" stop-color="#00C853"/>
+</radialGradient>
+</defs>
+</svg>
+</file>
+
+<file path="src/about.css">
+.about {
+    background-image: url('assets/bg6.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about .header .nav-links a:nth-of-type(4) {
+    color: var(--accent-bronze);
+}
+
+.about main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about main .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    height: 65%;
+    margin-top: 1%;
+    background-color: rgba(25, 28, 34, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.about main h1 {
+    color: var(--accent-bronze);
+    margin-top: 3%;
+}
+
+.about main .profile .me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.about main .profile .me .pfp {
+    width: 115px;
+    height: 115px;
+    border-radius: 100%;
+    border: 3px solid var(--border-color);
+    margin-bottom: 10%;
+}
+
+.about main .profile .me h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.about main .profile .who {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.about main .profile .who p {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    text-align: justify;
+}
+
+.about main .profile .who a {
+    text-decoration: none;
+    color: var(--accent-bronze);
+}
+
+.about main .profile .who a:hover {
+    color: var(--accent-maroon);
+    text-decoration: underline;
+}
+
+.about main .profile .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.about main .profile .links h3 {
+    margin-bottom: 3%;
+}
+
+.about main .profile .links .github {
+    display: flex;
+}
+
+.about main .profile .links .github a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: underline;
+    color: var(--accent-bronze);
+}
+.about main .profile .links .github a:hover {
+    color: var(--accent-maroon);
+}
+.about main .profile .links .github img {
+    width: 25px;
+    height: 25px;
+}
+
+.about main .profile .submit {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: auto;
+    margin-bottom: 5%;
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+.about main .made-with {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 45%;
+    height: 65%;
+    margin-top: 1%;
+    background-color: rgba(25, 28, 34, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+} 
+
+.about main .made-with .things {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 30%;
+}
+
+.about main .made-with .things h2 {
+    color: var(--accent-bronze);
+    margin: 0;
+}
+
+.about main .made-with .things ul {
+    padding-left: 10%;
+}
+
+.about main .made-with .things li {
+    line-height: 1.9rem;
+    font-size: 1.1rem;
+}
+
+.about main footer {
+  margin-top: 5%;
+  padding-bottom: 5%;
+}
+</file>
+
+<file path="src/contact.css">
+.contact {
+  background: url('assets/bg4.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contact header .nav-links a:nth-of-type(3) {
+  color: var(--accent-bronze) !important;
+}
+
+.contact main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact main .tagline {
+  margin-top: 2%;
+  color: var(--accent-bronze);
+}
+
+.contact main .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.contact main .box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  padding: 25px;
+  margin-top: 1%;
+}
+
+.contact main .info-header {
+  margin-left: 2%;
+  color: var(--accent-bronze);
+}
+
+.contact main .socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-left: 2%;
+  padding: 10px;
+}
+
+.contact main .icons a {
+  text-decoration: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.contact main .icons img {
+  top: auto;
+  width: 30px;
+  height: 30px;
+}
+
+.contact main .icons span {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.contact main .icons a span:hover {
+  color: var(--accent-bronze);
+}
+
+.contact main .info table {
+  table-layout: fixed;
+  margin-left: 2%;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+.contact main .info th {
+  text-align: left;
+  color: var(--accent-bronze);
+}
+
+.contact main .info td {
+  padding: 10px;
+}
+
+.contact main .add-info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 2%;
+}
+
+.contact main .add-info h2 {
+  color: var(--accent-bronze);
+  margin-bottom: 0;
+}
+
+.contact main .add-info p {
+  font-size: 1.1rem;
+}
+
+.contact main footer {
+  margin-top: 28%;
+  padding-bottom: 5%;
+}
+</file>
+
+<file path="src/home.css">
+.home {
+  background-image: url('assets/bg2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home header .nav-links a:first-of-type {
+  color: var(--accent-bronze) !important;
+}
+
+.home main {
+  height: 100vh;
+}
+
+.home main .tagline {
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-weight: 10;
+  color: var(--accent-bronze);
+}
+
+.home main .our-services .box {
+  border-radius: 10px;
+  padding-bottom: 2%;
+}
+
+.home main .our-services {
+  display: flex;
+  justify-content: center;
+}
+
+.home main .our-services h2 {
+  display: flex;
+  margin-left: 2%;
+  color: var(--accent-bronze);
+}
+
+.home main .our-services h3 {
+  margin-top: 5%;
+}
+
+.home main .our-services .first {
+  margin-top: 0px;
+}
+
+.home main .our-services li {
+  margin-left: 3%;
+  color: var(--text-primary);
+}
+
+.home main .space {
+  padding-bottom: 10%;
+}
+
+.home main footer {
+  height: 40vh;
+}
+</file>
+
+<file path="src/store.css">
+.store {
+  background: url('assets/bg3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.store header .nav-links a:nth-of-type(2) {
+  color: var(--accent-bronze) !important;
+}
+
+.store main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.store main .tagline {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 10;
+  color: var(--accent-bronze);
+}
+
+.store main .product-grid1 {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(25, 28, 34, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 2%;
+  max-width: 1000px;
+}
+
+.store main .product-grid2 {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(25, 28, 34, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 5%;
+  max-width: 1000px;
+}
+
+.store main .product-grid3 {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(25, 28, 34, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  max-width: 1000px;
+}
+
+.store main .product-card {
+  background-color: var(--bg-mid);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.store main .product-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-bronze);
+}
+
+.store main .product-card img {
+  width: 100%;
+  min-height: 150px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: var(--bg-darkest);
+}
+
+.store main .product-card h3 {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-top: auto;
+}
+
+.store main .product-card .price {
+  font-size: 13px;
+  color: var(--accent-bronze);
+}
+
+.store main .product-card .usd {
+  color: var(--text-muted);
+}
+
+.store main .inquire-btn {
+  background-color: var(--text-primary);
+  color: var(--bg-darkest);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.store main .inquire-btn:hover {
+  background-color: var(--accent-bronze);
+  color: var(--bg-darkest);
+}
+
+.store main footer {
+  padding-bottom: 5%;
+}
+</file>
+
+<file path="sections/signin.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/normalize.css">
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="../src/signin.css">
+    <link rel="icon" href="/favicon.svg" type="image/x-icon">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <title>Sign In</title>
+</head>
+<body class="signin">
+    <main>
+        <section class="container">
+
+            <div class="top">
+                <img src="/favicon.svg">
+                <h2>Sign In to Paalam</h2>
+            </div>
+
+            <form id="signin-form">
+
+                <div>
+                    <label>Email address</label>
+                    <input type="email" id="signin-email" required> 
+                </div>    
+
+                <div>
+                    <label>Password</label>
+                    <input type="password" id="signin-password" required>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="Sign in">
+                </div>
+
+            </form>
+
+            <div class="separator">Or</div>
+
+            <div id="googleSignInBtn"></div>
+
+            <div class="bottom">
+                <p>
+                    New to Paalam?
+                    <a href="/signup">
+                        Create an account
+                    </a>
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+<script>
+function handleCredentialResponse(response) {
+    const data = parseJwt(response.credential);
+    const user = {
+        name: data.name,
+        email: data.email,
+        picture: data.picture
+    };
+    localStorage.setItem('paalam_user', JSON.stringify(user));
+    window.location.href = '/home';
+}
+
+function parseJwt(token) {
+    let base64Url = token.split('.')[1];
+    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    let jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    return JSON.parse(jsonPayload);
+}
+
+window.onload = function () {
+    google.accounts.id.initialize({
+        client_id: "957269107783-bmmvsgrgfm115gb986hd4mvvdtfc9gr9.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+    });
+
+    google.accounts.id.renderButton(
+        document.getElementById("googleSignInBtn"),
+        { theme: "filled_black", size: "large", width: 340 }
+    );
+};
+
+document.getElementById('signin-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('signin-email').value;
+
+    const user = {
+        name: email,
+        email: email,
+        picture: '/account.svg',
+        isDefaultIcon: true
+    };
+
+    localStorage.setItem('paalam_user', JSON.stringify(user));
+    window.location.href = '/home';
+});
+</script>
+
+</body>
+</html>
+</file>
+
 <file path="src/signup.css">
 .signup {
   background-image: url(assets/bg5.png);
   background-size: cover;
   background-repeat: no-repeat;
-  animation: fadeInRight .2s ease-out forwards;
 }
 
 .signup main {
@@ -1165,275 +1605,13 @@ template {
 }
 </file>
 
-<file path="src/store.css">
-.store {
-  background: url('assets/bg3.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.store header .nav-links a:nth-of-type(2) {
-  color: var(--accent-bronze) !important;
-}
-
-.store main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  overflow-y: auto;
-}
-
-.store main .tagline {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-weight: 10;
-  color: var(--accent-bronze);
-  animation: fadeInDown .6s ease-out forwards;
-}
-
-.store main .product-grid1 {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: rgba(25, 28, 34, 0.85);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 32px;
-  margin-top: 2%;
-  max-width: 1000px;
-  animation: fadeInDown .4s ease-out forwards;
-}
-
-.store main .product-grid2 {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: rgba(25, 28, 34, 0.85);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 32px;
-  margin-top: 5%;
-  max-width: 1000px;
-  animation: fadeInDown .2s ease-out forwards;
-}
-
-.store main .product-grid3 {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: rgba(25, 28, 34, 0.85);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 32px;
-  margin-top: 5%;
-  margin-bottom: 10%;
-  max-width: 1000px;
-  animation: fadeInDown .1s ease-out forwards;
-}
-
-.store main .product-card {
-  background-color: var(--bg-mid);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 16px;
-  width: 180px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.store main .product-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--accent-bronze);
-}
-
-.store main .product-card img {
-  width: 100%;
-  min-height: 150px;
-  border-radius: 4px;
-  background-color: #fff;
-  color: var(--bg-darkest);
-}
-
-.store main .product-card h3 {
-  font-size: 13px;
-  font-weight: normal;
-  line-height: 1.4;
-  color: var(--text-primary);
-  margin-top: auto;
-}
-
-.store main .product-card .price {
-  font-size: 13px;
-  color: var(--accent-bronze);
-}
-
-.store main .product-card .usd {
-  color: var(--text-muted);
-}
-
-.store main .inquire-btn {
-  background-color: var(--text-primary);
-  color: var(--bg-darkest);
-  border: none;
-  border-radius: 20px;
-  padding: 8px 16px;
-  font-size: 13px;
-  cursor: pointer;
-  align-self: flex-start;
-}
-
-.store main .inquire-btn:hover {
-  background-color: var(--accent-bronze);
-  color: var(--bg-darkest);
-}
-
-.store main footer {
-  padding-bottom: 5%;
-}
-</file>
-
-<file path="package.json">
-{
-  "name": "testing-1",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^8.2.0"
-  }
-}
-</file>
-
-<file path="sections/signin.html">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/normalize.css">
-    <link rel="stylesheet" href="../src/style.css">
-    <link rel="stylesheet" href="../src/signin.css">
-    <link rel="icon" href="/favicon.svg" type="image/x-icon">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <title>Sign In</title>
-</head>
-<body class="signin">
-    <main>
-        <section class="container">
-
-            <div class="top">
-                <img src="/favicon.svg">
-                <h2>Sign In to Paalam</h2>
-            </div>
-
-            <form id="signin-form">
-
-                <div>
-                    <label>Email address</label>
-                    <input type="email" id="signin-email" required> 
-                </div>    
-
-                <div>
-                    <label>Password</label>
-                    <input type="password" id="signin-password" required>
-                </div>
-
-                <div class="submit">
-                    <input type="submit" value="Sign in">
-                </div>
-
-            </form>
-
-            <div class="separator">Or</div>
-
-            <div id="googleSignInBtn"></div>
-
-            <div class="bottom">
-                <p>
-                    New to Paalam?
-                    <a href="/signup">
-                        Create an account
-                    </a>
-                </p>
-            </div>
-
-        </section>
-
-    </main>
-
-<script>
-function handleCredentialResponse(response) {
-    const data = parseJwt(response.credential);
-    const user = {
-        name: data.name,
-        email: data.email,
-        picture: data.picture
-    };
-    localStorage.setItem('paalam_user', JSON.stringify(user));
-    window.location.href = '/home';
-}
-
-function parseJwt(token) {
-    let base64Url = token.split('.')[1];
-    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    let jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-    return JSON.parse(jsonPayload);
-}
-
-window.onload = function () {
-    google.accounts.id.initialize({
-        client_id: "957269107783-bmmvsgrgfm115gb986hd4mvvdtfc9gr9.apps.googleusercontent.com",
-        callback: handleCredentialResponse
-    });
-
-    google.accounts.id.renderButton(
-        document.getElementById("googleSignInBtn"),
-        { theme: "filled_black", size: "large", width: 340 }
-    );
-};
-
-document.getElementById('signin-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const email = document.getElementById('signin-email').value;
-
-    const user = {
-        name: email,
-        email: email,
-        picture: '/account.svg',
-        isDefaultIcon: true
-    };
-
-    localStorage.setItem('paalam_user', JSON.stringify(user));
-    window.location.href = '/home';
-});
-</script>
-
-</body>
-</html>
-</file>
-
 <file path="vercel.json">
 {
   "rewrites": [
     { "source": "/home", "destination": "/sections/home.html" },
     { "source": "/contact", "destination": "/sections/contact.html" },
     { "source": "/store", "destination": "/sections/store.html" },
+    { "source": "/about", "destination": "/sections/about.html"},
     { "source": "/signup", "destination": "/sections/signup.html"},
     { "source": "/signin", "destination": "/sections/signin.html"}
   ]
@@ -1448,6 +1626,7 @@ const routes = {
   '/home': '/sections/home.html',
   '/contact': '/sections/contact.html',
   '/store': '/sections/store.html',
+  '/about': '/sections/about.html',
   '/signup': '/sections/signup.html',
   '/signin': '/sections/signin.html',
 }
@@ -1460,6 +1639,7 @@ export default defineConfig({
         home: resolve(import.meta.dirname, 'sections/home.html'),
         contact: resolve(import.meta.dirname, 'sections/contact.html'),
         store: resolve(import.meta.dirname, 'sections/store.html'),
+        about: resolve(import.meta.dirname, 'sections/about.html'),
         signup: resolve(import.meta.dirname, 'sections/signup.html'),
         signin: resolve(import.meta.dirname, 'sections/signin.html'),
       },
@@ -1483,6 +1663,255 @@ export default defineConfig({
     },
   ],
 })
+</file>
+
+<file path="sections/about.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/normalize.css">
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="../src/about.css">
+    <link rel="icon" href="/favicon.svg" type="image/x-icon">
+    <title>About</title>
+</head>
+<body class="about">
+
+    <header class="header">
+
+        <div class="logo">
+            <a href="/" title="Hello : )">
+                <img src="/favicon.svg" alt="logo" class="logo-icon">
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="/home">Home</a>
+            <a href="/store">Store</a>
+            <a href="/contact">Contact</a>
+            <a>About</a>
+        </nav>
+        
+        <div class="account" id="header-account">
+            <a href="/signup">
+                <img src="/account.svg" alt="account" class="account-icon">
+            </a>
+        </div>
+
+    </header>
+
+    <main>
+        
+        <h1>Created by</h1>
+
+        <section class="profile">
+
+            <div class="me">
+                <img src="../src/assets/pfp.jpg" class="pfp">
+                <h2>Sebastian Daniel Z. Sabio</h2>
+            </div>
+
+            <div class="who">
+                <p>I am a first year BS in Computer Science student at 
+                    <a href="https://shc.edu.ph" target="_blank" title="Visit my college's website :)">Sacred Heart College of Lucena City</a>.
+                    When it comes to coding/programming I enjoy scratching my head when things don't work and get surprised when they do. I've been enjoying
+                    this past month learning about new things. 
+                </p>
+            </div>
+
+            <div class="quote">
+                <h4>"Experience is the name everyone gives to their mistakes."</h4>
+                <p>— Oscar Wilde</p>
+            </div>
+
+            <div class="links">
+                <h3>Project Link</h3>
+                <div class="github">
+                    <a href="https://github.com/adAstra144/paalam/" title="Visit this projects github repository" target="_blank">
+                        <img src="../src/assets/github.svg">
+                        <span>Github</span>
+                    </a>
+                </div>
+
+                <div class="">
+
+                </div>
+            </div>
+
+            <p class="submit">
+                This website is to be submitted <br>
+                as a 1st year | 1st sem prelim exam this August 20206.
+            </p>
+
+        </section>
+
+        <h1>Created Using</h1>
+
+        <section class="made-with">
+
+            <div class="things">
+                <h2>Core Stack</h2>
+
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Javascript</li>
+                </ul>
+
+            </div>
+
+            <div class="things">
+                <h2>Libraries</h2>
+
+                <ul>
+                    <li>normalize.css</li>
+                    <li>Google Services</li>
+                    <li>svgl</li>
+                </ul>
+
+            </div>
+
+            <div class="things">
+                <h2>Tools</h2>
+
+                <ul>
+                    <li>Figma</li>
+                    <li>VS Code</li>
+                    <li>Vercel</li>
+                    <li>Github</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+        <footer>
+
+            <section class="top">
+
+                <table>
+                    
+                    <thead>
+
+                        <tr>
+                            <th class="empha">Explore</th>
+                            <th class="empha">Contacts</th>
+                            <th class="empha">Physical Address</th>
+                        </tr>
+
+                    </thead>
+    
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <nav class="nav-links">
+                                    <a href="/home">Home</a>
+                                </nav>
+                            </td>
+
+                            <td>
+                                <span>63+ 927 021 4698</span>
+                            </td>
+
+                            <td rowspan="2">
+                                <span class="address">
+                                    1 Merchan St, Lucena City, 4301 Quezon
+                                </span>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <nav class="nav-links">
+                                    <a href="/store">Store</a>
+                                </nav>             
+                            </td>
+
+                            <td>
+                                <span>sabio.sdz@shc.edu.ph</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <nav class="nav-links">
+                                    <a href="/contact">Contacts</a>
+                                </nav>             
+                            </td>
+                        </tr>
+
+                    </tbody>
+    
+                </table>
+
+            </section>
+    
+            <hr>
+
+            <section class="bottom">
+                <h5>
+                    © 2026 Paalam. All rights reserved.
+
+                </h5>
+
+                <h5>
+                    Paalam is fictional and developed as a school project 
+                    and does not represent an actual business or offer real services.
+                </h5>
+            </section>
+
+            <a href="/contact" class="goTop" title="Back to top">🡅</a>
+
+        </footer>
+
+    </main>
+
+<script>
+function renderHeaderAuth() {
+    const stored = localStorage.getItem('paalam_user');
+    const container = document.getElementById('header-account');
+
+    if (stored) {
+        const user = JSON.parse(stored);
+        container.classList.add('signed-in');
+
+        const avatarClass = user.isDefaultIcon
+            ? 'account-avatar account-avatar-default'
+            : 'account-avatar';
+
+        const avatarAlt = user.isDefaultIcon ? 'Account' : user.name;
+
+        container.innerHTML = `
+            <div class="user-menu">
+                <button id="account-toggle" class="account-toggle">
+                    <img src="${user.picture}" alt="${avatarAlt}" class="${avatarClass}">
+                </button>
+                <div class="account-dropdown" id="account-dropdown">
+                    <p class="account-name">${user.name}</p>
+                    <button id="signout-btn">Sign out</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('account-toggle').addEventListener('click', () => {
+            document.getElementById('account-dropdown').classList.toggle('open');
+        });
+
+        document.getElementById('signout-btn').addEventListener('click', () => {
+            localStorage.removeItem('paalam_user');
+            window.location.href = '/home';
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', renderHeaderAuth);
+</script>
+
+</body>
+</html>
 </file>
 
 <file path="sections/signup.html">
@@ -1886,10 +2315,11 @@ main .section-header {
 
 .box {
   border: 1px solid var(--border-color);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   width: fit-content;
-  background-color: rgba(32, 36, 44, 0.7);
+  background-color: rgba(25, 28, 34, 0.8);
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -2098,6 +2528,7 @@ Retrieved 2026-08-20, License - CC BY-SA 4.0
             <a href="/home">Home</a>
             <a>Store</a>
             <a href="/contact">Contact</a>
+            <a href="/about">About</a>
         </nav>
 
         <div class="account" id="header-account">
@@ -2286,7 +2717,7 @@ Retrieved 2026-08-20, License - CC BY-SA 4.0
                 </h5>
     
                 <h5>
-                    Paalam is fictional and developed as a HTML/CSS class project 
+                    Paalam is fictional and developed as a school project 
                     and does not represent an actual business or offer real services.
                 </h5>
             </section>
@@ -2368,6 +2799,7 @@ document.addEventListener('DOMContentLoaded', renderHeaderAuth);
             <a>Home</a>
             <a href="/store">Store</a>
             <a href="/contact">Contact</a>
+            <a href="/about">About</a>
         </nav>
 
         <div class="account" id="header-account">
@@ -2525,7 +2957,7 @@ document.addEventListener('DOMContentLoaded', renderHeaderAuth);
                 </h5>
 
                 <h5>
-                    Paalam is fictional and developed as a HTML/CSS class project 
+                    Paalam is fictional and developed as a school project 
                     and does not represent an actual business or offer real services.
                 </h5>
             </section>
@@ -2608,6 +3040,7 @@ document.addEventListener('DOMContentLoaded', renderHeaderAuth);
             <a href="/home">Home</a>
             <a href="/store">Store</a>
             <a>Contact</a>
+            <a href="/about">About</a>
         </nav>
         
         <div class="account" id="header-account">
@@ -2677,7 +3110,7 @@ document.addEventListener('DOMContentLoaded', renderHeaderAuth);
 
                                 <div class="icons">
                                     <a title="Phone Number">
-                                        <img src="../src/assets/phone.svg" alt="Phone">
+                                        <img src="../src/assets/phone1.svg" alt="Phone">
                                         <span>63+ 927 021 4698</span>
                                     </a>
                                 </div>
@@ -2788,7 +3221,7 @@ document.addEventListener('DOMContentLoaded', renderHeaderAuth);
                 </h5>
 
                 <h5>
-                    Paalam is fictional and developed as a HTML/CSS class project 
+                    Paalam is fictional and developed as a school project 
                     and does not represent an actual business or offer real services.
                 </h5>
             </section>
@@ -2839,6 +3272,7 @@ function renderHeaderAuth() {
 
 document.addEventListener('DOMContentLoaded', renderHeaderAuth);
 </script>
+
 </body>
 </html>
 </file>
@@ -2973,7 +3407,7 @@ document.addEventListener('DOMContentLoaded', renderHeaderAuth);
                 </h5>
 
                 <h5>
-                    Paalam is fictional and developed as a HTML/CSS class project 
+                    Paalam is fictional and developed as a school project 
                     and does not represent an actual business or offer real services.
                 </h5>
             </section>
