@@ -82,6 +82,7 @@
   border-radius: 4px;
   background-color: #fff;
   color: var(--bg-darkest);
+  margin-top: auto;
 }
 
 .store main .product-card h3 {
@@ -89,7 +90,7 @@
   font-weight: normal;
   line-height: 1.4;
   color: var(--text-primary);
-  margin-top: auto;
+
 }
 
 .store main .product-card .price {
