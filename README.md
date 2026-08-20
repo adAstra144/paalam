@@ -9,7 +9,7 @@
 ## Features
 
 - **Multi-page static site** — Home, Store, Contact, About, Sign In, and Sign Up, all sharing a consistent header/footer
-- **Custom design system** ("Quiet Mourning v2") — a dark charcoal palette with bronze and maroon accents, defined as CSS custom properties
+- **Custom design system** — a dark charcoal palette with bronze and maroon accents, defined as CSS custom properties
 - **Client-side authentication**
   - Google Sign-In via `google.accounts.id` (ID token flow)
   - Manual email/password sign-up and sign-in forms
@@ -45,7 +45,7 @@
 │   ├── favicon.svg
 │   └── account.svg
 ├── notes/
-│   └── color-scheme.md          # "Quiet Mourning v2" palette reference
+│   └── color-scheme.md          # palette reference
 ├── vite.config.js               # Multi-page build config + dev/preview rewrites
 ├── vercel.json                  # Production clean-URL rewrites
 └── package.json
