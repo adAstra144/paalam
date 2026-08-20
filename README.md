@@ -44,8 +44,6 @@
 ├── public/
 │   ├── favicon.svg
 │   └── account.svg
-├── notes/
-│   └── color-scheme.md          # palette reference
 ├── vite.config.js               # Multi-page build config + dev/preview rewrites
 ├── vercel.json                  # Production clean-URL rewrites
 └── package.json
@@ -67,7 +65,7 @@
 | Borders / dividers | `#2B2F38` |
 | Hover / active state | `#C4A57A` |
 
-Defined as CSS custom properties in `src/style.css`, so all page-level stylesheets pull from a single source of truth. See `notes/color-scheme.md` for the full reference.
+Defined as CSS custom properties in `src/style.css`, so all page-level stylesheets pull from a single source of truth.
 
 ---
 
