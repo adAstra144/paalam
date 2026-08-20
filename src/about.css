@@ -1,9 +1,3 @@
-.about {
-    background-image: url('assets/bg6.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 .about .header .nav-links a:nth-of-type(4) {
     color: var(--accent-bronze);
 }

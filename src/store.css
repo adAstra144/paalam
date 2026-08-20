@@ -1,9 +1,3 @@
-.store {
-  background: url('assets/bg3.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .store header .nav-links a:nth-of-type(2) {
   color: var(--accent-bronze) !important;
 }

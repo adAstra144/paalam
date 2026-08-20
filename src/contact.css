@@ -1,9 +1,3 @@
-.contact {
-  background: url('assets/bg4.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .contact header .nav-links a:nth-of-type(3) {
   color: var(--accent-bronze) !important;
 }
