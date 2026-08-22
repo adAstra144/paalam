@@ -1,5 +1,9 @@
 # Paalam 
 
+*Submitted as a 1st year, 1st semester prelim exam project — August 2026.*
+
+- - -
+
 **Paalam** is a fictional coffin/casket store website. It presents a fully-designed, static multi-page site — services, a product catalog, contact information, and a client account flow.
 
 > **Disclaimer:** Paalam is fictional and developed solely as a school project. It does not represent an actual business or offer real services.
@@ -108,10 +112,38 @@ No build command or output directory is required beyond the default — push to 
 
 ---
 
+## Screenshots
+
+**Landing Page** (index.html)
+
+![Screenshot1](./screenshots/ss1.png)
+
+**Sign Up** (signup.html)
+
+![Screenshot2](./screenshots/ss2.png)
+
+**Sign In** (signin.html)
+
+![Screenshot3](./screenshots/ss3.png)
+
+**Home** (home.html)
+
+![Screenshot4](./screenshots/ss4.png)
+
+**Store** (store.html)
+
+![Screenshot5](./screenshots/ss5.png)
+
+**Contact** (contact.html)
+
+![Screenshot6](./screenshots/ss6.png)
+
+**About** (about.html)
+
+![Screenshot7](./screenshots/ss7.png)
+
+- - -
 ## Author
 
 - GitHub: [github.com/adAstra144](https://github.com/adAstra144)
 
----
-
-*Submitted as a 1st year, 1st semester prelim exam project — August 2026.*
