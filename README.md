@@ -71,7 +71,7 @@ Defined as CSS custom properties in `src/style.css`, so all page-level styleshee
 
 ## Authentication
 
-Authentication is entirely **client-side** — appropriate for a class demo, not for production use.
+Authentication is entirely **client-side**.
 
 - **Google Sign-In**: Uses the `google.accounts.id` library (`renderButton` + ID-token callback). On success, `name`, `email`, and `picture` are decoded from the JWT and stored under `localStorage.paalam_user`.
 - **Manual sign-up/sign-in**: Stores the entered name/email under the same key, with `isDefaultIcon: true` so the fallback account icon (rather than a broken image) is shown and correctly tinted.
